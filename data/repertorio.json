@@ -36,6 +36,24 @@
       "timeSig": "4/4",
       "title": "Cuán firme cimiento"
     },
+    "s_dame-a-cristo": {
+      "artist": "Jonathan & Sarah Jerez",
+      "bpm": 76,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "A",
+      "link": "https://songbpm.com/@jonathan-sarah-jerez/dame-a-cristo",
+      "lyrics": "",
+      "notes": "Álbum \"Vivir Es Cristo\" (13 de agosto de 2013), 5:06. Tono La. 76 bpm según songbpm y Musicstax; ChordU y Chordify miden 73. Acordes base: A, F♯m, D, Bm. Hay otras canciones distintas con el mismo título, de Catedral de la Fe (Fa), Marcos Brunet (Do) y Johan y Sofi; esta es la de Jonathan & Sarah Jerez. Compás sin confirmar.",
+      "themes": [
+        "anhelo de Cristo",
+        "suficiencia de Cristo",
+        "entrega",
+        "oración"
+      ],
+      "timeSig": "",
+      "title": "Dame a Cristo",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "s_digno-para-siempre": {
       "artist": "Para Su Gloria",
       "bpm": 123,
@@ -225,6 +243,25 @@
       "timeSig": "4/4",
       "title": "Nada en la tierra"
     },
+    "s_no-soy-yo-sino-cristo-en-mi": {
+      "artist": "Doulos (Jonny Robinson, Rich Thompson, Michael Farren)",
+      "bpm": 72,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "Db",
+      "link": "https://chords.lacuerda.net/doulos/no_soy_yo_sino_cristo_en_mi.shtml",
+      "lyrics": "",
+      "notes": "Versión en español de \"Yet Not I But Through Christ In Me\" de CityAlight (Jonny Robinson, Rich Thompson, Michael Farren). Sencillo de Doulos del 3 de marzo de 2023 (Doulos Studio Records), 5:12. Tono Re♭ según Chordify sobre el video oficial; La Cuerda y Ultimate Guitar la transcriben en Do, un semitono abajo. Los 72 bpm son la mitad de los 143 que mide Chordify a doble tiempo. Jonathan & Sarah Jerez tienen otra versión, en Do. Compás sin confirmar.",
+      "themes": [
+        "unión con Cristo",
+        "gracia",
+        "seguridad en Cristo",
+        "identidad en Cristo",
+        "perseverancia"
+      ],
+      "timeSig": "",
+      "title": "No soy yo, sino Cristo en mí",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "s_nombre-sobre-todo": {
       "artist": "Adoración La IBI & Sovereign Grace Music",
       "bpm": 132,
@@ -277,6 +314,24 @@
       "timeSig": "",
       "title": "Por todo el mundo"
     },
+    "s_su-gracia-es-mayor": {
+      "artist": "Conferencia Expositores (Matt Boswell, Matt Papa)",
+      "bpm": 122,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "E",
+      "link": "https://tunebat.com/Info/Su-gracia-es-mayor-Conferencia-Expositores/4EsYN97fmW2QEe7NGk5tDR",
+      "lyrics": "",
+      "notes": "Versión en español de \"His Mercy Is More\" (Matt Boswell, Matt Papa); traducción de Emanuel Elizondo, Rogers Peralta y Daniel Lobo. Álbum \"Himnos de Gracia – Conferencia Expositores 2020\", el mismo de \"Por todo el mundo\". Tono Mi y 122 bpm según Tunebat (3:56); otras transcripciones miden 131 o 136, también en Mi. Acordes base: A, E, B, C♯m. Adoración La IBI, Doulos y Shane & Shane tienen sus propias versiones, con traducciones distintas. Compás sin confirmar.",
+      "themes": [
+        "gracia",
+        "perdón",
+        "misericordia de Dios",
+        "pecado y redención"
+      ],
+      "timeSig": "",
+      "title": "Su gracia es mayor",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "s_todo-lo-que-creo-el-rey": {
       "artist": "Gracia Soberana Música (arreglo de Jonathan y Ryan Baird)",
       "bpm": 75,
@@ -293,6 +348,24 @@
       ],
       "timeSig": "4/4",
       "title": "Todo lo que creó el Rey"
+    },
+    "s_tu-eres-santo": {
+      "artist": "Adoración La IBI",
+      "bpm": 70,
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "D",
+      "link": "https://www.multitracks.com/songs/Adoracion-La-IBI/Mirare-Al-Rey/Tu-Eres-Santo/overview/",
+      "lyrics": "",
+      "notes": "Álbum \"Miraré al Rey\" (2023, Integrity Music). Tono Re y 70 bpm según Multitracks, que avisa que la grabación tiene cambios de tempo: usa el click. Tunebat y songbpm miden 140, el doble. Cifra Club la transcribe en Sol. Ojo: circula también como \"Príncipe de Paz\"; no la confundas con \"Tú eres santo (Príncipe de Paz)\" de Michael W. Smith ni con las de Hillsong United o Vino Nuevo, que son otras canciones. Compás sin confirmar.",
+      "themes": [
+        "santidad de Dios",
+        "adoración",
+        "Príncipe de Paz",
+        "exaltación"
+      ],
+      "timeSig": "",
+      "title": "Tú eres santo",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_vasijas-rotas": {
       "artist": "Hillsong en Español (Joel Houston, Jonas Myrin)",
@@ -332,6 +405,19 @@
     }
   },
   "services": {
+    "v_2026-10-18-domingo": {
+      "date": "2026-10-18",
+      "name": "",
+      "notes": "",
+      "songIds": [
+        "s_tu-eres-santo",
+        "s_no-soy-yo-sino-cristo-en-mi",
+        "s_su-gracia-es-mayor",
+        "s_dame-a-cristo"
+      ],
+      "type": "domingo",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "v_2026-10-25-domingo": {
       "date": "2026-10-25",
       "name": "",
