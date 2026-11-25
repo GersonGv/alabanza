@@ -36,6 +36,19 @@
       "timeSig": "4/4",
       "title": "Cuán firme cimiento"
     },
+    "s_digno-para-siempre": {
+      "artist": "PSG",
+      "bpm": "",
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "",
+      "link": "",
+      "lyrics": "",
+      "notes": "",
+      "themes": [],
+      "timeSig": "",
+      "title": "Digno para siempre",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "s_el-digno-dios": {
       "artist": "Alfarero",
       "bpm": 72,
@@ -52,6 +65,19 @@
       ],
       "timeSig": "4/4",
       "title": "El digno Dios"
+    },
+    "s_el-dios-que-adoramos": {
+      "artist": "Adoración La IBI",
+      "bpm": "",
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "",
+      "link": "",
+      "lyrics": "",
+      "notes": "",
+      "themes": [],
+      "timeSig": "",
+      "title": "El Dios que adoramos",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_empieza-en-mi": {
       "artist": "Jonathan & Sarah Jerez",
@@ -206,6 +232,19 @@
       "timeSig": "4/4",
       "title": "Nombre sobre todo"
     },
+    "s_pon-tu-mirada": {
+      "artist": "Gracia Soberana Música",
+      "bpm": "",
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "",
+      "link": "",
+      "lyrics": "",
+      "notes": "",
+      "themes": [],
+      "timeSig": "",
+      "title": "Pon tu mirada",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "s_por-todo-el-mundo": {
       "artist": "Conferencia Expositores",
       "bpm": null,
@@ -239,6 +278,19 @@
       "timeSig": "4/4",
       "title": "Todo lo que creó el Rey"
     },
+    "s_vasijas-rotas": {
+      "artist": "Hillsong",
+      "bpm": "",
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "",
+      "link": "",
+      "lyrics": "",
+      "notes": "",
+      "themes": [],
+      "timeSig": "",
+      "title": "Vasijas rotas",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "s_venid-glorificad-a-dios": {
       "artist": "Gracia Soberana Música (Bob Kauflin, Tim Chester)",
       "bpm": 63,
@@ -258,6 +310,19 @@
     }
   },
   "services": {
+    "v_2026-10-25-domingo": {
+      "date": "2026-10-25",
+      "name": "",
+      "notes": "",
+      "songIds": [
+        "s_digno-para-siempre",
+        "s_el-dios-que-adoramos",
+        "s_vasijas-rotas",
+        "s_pon-tu-mirada"
+      ],
+      "type": "domingo",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "v_2026-11-01-domingo": {
       "date": "2026-11-01",
       "name": "",
