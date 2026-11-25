@@ -5,6 +5,7 @@
     "s_cristo-nuestra-gloria": {
       "artist": "Gracia Soberana Música feat. Jonathan & Sarah Jerez (David Zimmer, Nathan Stiff)",
       "bpm": 144,
+      "cover": "data/covers/en-ti-esperamos.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "Bb",
       "link": "https://sovereigngracemusic.com/wp-content/uploads/Cristo-Nuestra-Gloria-Acordes.pdf",
@@ -17,11 +18,13 @@
         "celebración"
       ],
       "timeSig": "4/4",
-      "title": "Cristo nuestra gloria"
+      "title": "Cristo nuestra gloria",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_cuan-firme-cimiento": {
       "artist": "Gracia Soberana Música (himno tradicional)",
       "bpm": 76,
+      "cover": "data/covers/himnos-gsm.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "G",
       "link": "https://graciasoberanamusica.com/wp-content/uploads/Cuan-Firme-Cimiento_ACORDES_G_BE_03312025.docx.pdf",
@@ -34,11 +37,13 @@
         "consuelo en la prueba"
       ],
       "timeSig": "4/4",
-      "title": "Cuán firme cimiento"
+      "title": "Cuán firme cimiento",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_dame-a-cristo": {
       "artist": "Jonathan & Sarah Jerez",
       "bpm": 76,
+      "cover": "data/covers/vivir-es-cristo.jpg",
       "createdAt": "2026-11-25T00:00:00.000Z",
       "key": "A",
       "link": "https://songbpm.com/@jonathan-sarah-jerez/dame-a-cristo",
@@ -57,6 +62,7 @@
     "s_digno-para-siempre": {
       "artist": "Para Su Gloria",
       "bpm": 123,
+      "cover": "data/covers/porque-el-es-santo.jpg",
       "createdAt": "2026-11-25T00:00:00.000Z",
       "key": "B",
       "link": "https://www.cifraclub.com/para-su-gloria/digno-para-siempre/",
@@ -75,6 +81,7 @@
     "s_el-digno-dios": {
       "artist": "Alfarero",
       "bpm": 72,
+      "cover": "data/covers/el-digno-dios.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "G",
       "link": "https://songbpm.com/@alfarero/el-digno-dios",
@@ -87,11 +94,13 @@
         "exaltación"
       ],
       "timeSig": "4/4",
-      "title": "El digno Dios"
+      "title": "El digno Dios",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_el-dios-que-adoramos": {
       "artist": "Adoración La IBI & Sovereign Grace Music (Jonathan Jerez)",
       "bpm": 110,
+      "cover": "data/covers/el-dios-que-adoramos.jpg",
       "createdAt": "2026-11-25T00:00:00.000Z",
       "key": "F#",
       "link": "https://sovereigngracemusic.com/wp-content/uploads/el_dios_que_adoramos-guitarra.pdf",
@@ -110,6 +119,7 @@
     "s_empieza-en-mi": {
       "artist": "Jonathan & Sarah Jerez",
       "bpm": 75,
+      "cover": "data/covers/empieza-en-mi.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "Db",
       "link": "https://open.spotify.com/track/3BgajkzHd6JzFFBkK42aNz",
@@ -123,11 +133,13 @@
         "avivamiento"
       ],
       "timeSig": "4/4",
-      "title": "Empieza en mí"
+      "title": "Empieza en mí",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_gloria-al-senor-poderoso": {
       "artist": "Gracia Soberana Música (himno de Joachim Neander)",
       "bpm": 69,
+      "cover": "data/covers/himnos-gsm.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "E",
       "link": "https://graciasoberanamusica.com/musica/canciones/gloria-al-senor-poderoso/",
@@ -140,11 +152,13 @@
         "providencia"
       ],
       "timeSig": "6/8",
-      "title": "Gloria al Señor, poderoso"
+      "title": "Gloria al Señor, poderoso",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_gracia-mas-grande": {
       "artist": "Jonathan & Sarah Jerez",
       "bpm": 73,
+      "cover": "data/covers/periscopio.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "F",
       "link": "https://songbpm.com/@jonathan-sarah-jerez/gracia-mas-grande",
@@ -156,11 +170,13 @@
         "pecado y redención"
       ],
       "timeSig": "4/4",
-      "title": "Gracia más grande"
+      "title": "Gracia más grande",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_jesucristo-basta": {
       "artist": "Un Corazón",
       "bpm": 69,
+      "cover": "data/covers/somos-iglesia.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "Ab",
       "link": "https://songbpm.com/@un-corazon/jesucristo-basta",
@@ -173,11 +189,13 @@
         "adoración"
       ],
       "timeSig": "4/4",
-      "title": "Jesucristo basta"
+      "title": "Jesucristo basta",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_la-salvacion-es-del-senor": {
       "artist": "Adoración La IBI",
       "bpm": 64,
+      "cover": "data/covers/la-salvacion-es-del-senor.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "E",
       "link": "https://chords.lacuerda.net/ibi/la_salvacion_es_del_senor.shtml",
@@ -190,11 +208,13 @@
         "Jonás 2:9"
       ],
       "timeSig": "4/4",
-      "title": "La salvación es del Señor"
+      "title": "La salvación es del Señor",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_mi-alma-esperara": {
       "artist": "Gracia Soberana Música feat. Jonathan & Sarah Jerez (Keaton Bunting, Bob Kauflin)",
       "bpm": 81,
+      "cover": "data/covers/en-ti-esperamos.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "G",
       "link": "https://chords.lacuerda.net/sovereign_grace_music/mi_alma_esperara",
@@ -207,11 +227,13 @@
         "paciencia"
       ],
       "timeSig": "6/8",
-      "title": "Mi alma esperará"
+      "title": "Mi alma esperará",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_mi-esperanza-esta-en-jesus": {
       "artist": "Jonathan & Sarah Jerez",
       "bpm": 120,
+      "cover": "data/covers/periscopio.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "F",
       "link": "https://songbpm.com/@jonathan-sarah-jerez/mi-esperanza-esta-en-jesus",
@@ -224,11 +246,13 @@
         "seguridad en Cristo"
       ],
       "timeSig": "4/4",
-      "title": "Mi esperanza está en Jesús"
+      "title": "Mi esperanza está en Jesús",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_nada-en-la-tierra": {
       "artist": "Adoración La IBI",
       "bpm": 138,
+      "cover": "data/covers/la-salvacion-es-del-senor.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "D",
       "link": "https://acordesweb.com/cancion/la-ibi/nada-en-la-tierra",
@@ -241,11 +265,13 @@
         "adoración"
       ],
       "timeSig": "4/4",
-      "title": "Nada en la tierra"
+      "title": "Nada en la tierra",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_no-soy-yo-sino-cristo-en-mi": {
       "artist": "Doulos (Jonny Robinson, Rich Thompson, Michael Farren)",
       "bpm": 72,
+      "cover": "data/covers/no-soy-yo-sino-cristo.jpg",
       "createdAt": "2026-11-25T00:00:00.000Z",
       "key": "Db",
       "link": "https://chords.lacuerda.net/doulos/no_soy_yo_sino_cristo_en_mi.shtml",
@@ -265,6 +291,7 @@
     "s_nombre-sobre-todo": {
       "artist": "Adoración La IBI & Sovereign Grace Music",
       "bpm": 132,
+      "cover": "data/covers/la-salvacion-es-del-senor.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "D",
       "link": "https://tabs.ultimate-guitar.com/tab/la-ibi/nombre-sobre-todo-chords-3623486",
@@ -277,11 +304,13 @@
         "adoración"
       ],
       "timeSig": "4/4",
-      "title": "Nombre sobre todo"
+      "title": "Nombre sobre todo",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_pon-tu-mirada": {
       "artist": "Gracia Soberana Música feat. Jonathan & Sarah Jerez (George Romanacce, Nathan Stiff, Nic Trout, Kevin Winebarger)",
       "bpm": 50,
+      "cover": "data/covers/en-ti-esperamos.jpg",
       "createdAt": "2026-11-25T00:00:00.000Z",
       "key": "B",
       "link": "https://sovereigngracemusic.com/wp-content/uploads/Pon-Tu-Mirada-Acordes.pdf",
@@ -301,6 +330,7 @@
     "s_por-todo-el-mundo": {
       "artist": "Conferencia Expositores (Keith Getty, Stuart Townend)",
       "bpm": null,
+      "cover": "data/covers/himnos-de-gracia-2020.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "D",
       "link": "https://himnosdegracia.com/por-todo-el-mundo/",
@@ -320,6 +350,7 @@
     "s_su-gracia-es-mayor": {
       "artist": "Conferencia Expositores (Matt Boswell, Matt Papa)",
       "bpm": 122,
+      "cover": "data/covers/himnos-de-gracia-2020.jpg",
       "createdAt": "2026-11-25T00:00:00.000Z",
       "key": "E",
       "link": "https://tunebat.com/Info/Su-gracia-es-mayor-Conferencia-Expositores/4EsYN97fmW2QEe7NGk5tDR",
@@ -338,6 +369,7 @@
     "s_todo-lo-que-creo-el-rey": {
       "artist": "Gracia Soberana Música (arreglo de Jonathan y Ryan Baird)",
       "bpm": 75,
+      "cover": "data/covers/himnos-gsm.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "C",
       "link": "https://sovereigngracemusic.s3.amazonaws.com/wp-content/uploads/20250203134004/Todo-lo-que-Creo-el-Rey_AC-ORDES_C-D_BE_02012025.pdf",
@@ -350,11 +382,13 @@
         "toda la creación adora"
       ],
       "timeSig": "4/4",
-      "title": "Todo lo que creó el Rey"
+      "title": "Todo lo que creó el Rey",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_tu-eres-santo": {
       "artist": "Adoración La IBI",
       "bpm": 70,
+      "cover": "data/covers/mirare-al-rey.jpg",
       "createdAt": "2026-11-25T00:00:00.000Z",
       "key": "D",
       "link": "https://www.multitracks.com/songs/Adoracion-La-IBI/Mirare-Al-Rey/Tu-Eres-Santo/overview/",
@@ -373,6 +407,7 @@
     "s_vasijas-rotas": {
       "artist": "Hillsong en Español (Joel Houston, Jonas Myrin)",
       "bpm": 68,
+      "cover": "data/covers/sublime-gracia.jpg",
       "createdAt": "2026-11-25T00:00:00.000Z",
       "key": "Bb",
       "link": "https://www.multitracks.com/songs/Hillsong-en-Espanol/Sublime-Gracia/Vasijas-Rotas-(Sublime-Gracia)/overview/",
@@ -392,6 +427,7 @@
     "s_venid-glorificad-a-dios": {
       "artist": "Gracia Soberana Música (Bob Kauflin, Tim Chester)",
       "bpm": 63,
+      "cover": "data/covers/el-dios-que-adoramos.jpg",
       "createdAt": "2026-11-18T12:00:00.000Z",
       "key": "Bb",
       "link": "https://www.praisecharts.com/songs/details/25757/venid-glorificad-a-dios-come-praise-and-glorify-chords",
@@ -404,7 +440,8 @@
         "salvación"
       ],
       "timeSig": "6/8",
-      "title": "Venid, glorificad a Dios"
+      "title": "Venid, glorificad a Dios",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     }
   },
   "services": {

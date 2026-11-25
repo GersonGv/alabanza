@@ -145,6 +145,10 @@ textarea.input{resize:vertical}
 .tag{display:inline-block;background:var(--surface-2);border:1px solid var(--line);border-radius:3px;padding:1px 7px;font-size:11.5px;color:var(--muted);white-space:nowrap;font-weight:600}
 
 /* key box & tempo */
+.art{width:36px;height:36px;border-radius:4px;object-fit:cover;flex:none;background:var(--surface-2);border:1px solid var(--line)}
+.art.none{display:inline-flex;align-items:center;justify-content:center;color:var(--faint);font-size:15px;line-height:1}
+.art.big{width:128px;height:128px;border-radius:6px}
+@media (max-width:600px){.art.big{width:96px;height:96px}}
 .key{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:44px;height:40px;border-radius:5px;border:1px solid #D2D4D8;background:var(--surface-2);font-family:var(--mono);line-height:1;flex:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .key{border-color:#343945}}
 :root[data-theme="dark"] .key{border-color:#343945}
@@ -159,10 +163,10 @@ textarea.input{resize:vertical}
 @media (prefers-reduced-motion:reduce){.tempo i{animation:none}}
 
 /* list: column bar + rows */
-.listbar{display:grid;grid-template-columns:44px minmax(0,1fr) 92px 150px 140px;gap:16px;align-items:center;background:var(--bar);border:1px solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;padding:7px 10px;font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--muted)}
+.listbar{display:grid;grid-template-columns:36px 44px minmax(0,1fr) 92px 150px 140px;gap:16px;align-items:center;background:var(--bar);border:1px solid var(--line);border-bottom:0;border-radius:var(--r) var(--r) 0 0;padding:7px 10px;font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--muted)}
 @media (max-width:760px){.listbar{display:none}}
 .songs{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:0 0 var(--r) var(--r)}
-.song{display:grid;grid-template-columns:44px minmax(0,1fr) 92px 150px 140px;gap:16px;align-items:center;padding:9px 10px;border:0;border-bottom:1px solid var(--line);cursor:pointer;background:none;text-align:left;width:100%}
+.song{display:grid;grid-template-columns:36px 44px minmax(0,1fr) 92px 150px 140px;gap:14px;align-items:center;padding:9px 10px;border:0;border-bottom:1px solid var(--line);cursor:pointer;background:none;text-align:left;width:100%}
 .song:last-child{border-bottom:0}
 .song:hover{background:var(--surface-2)}
 .song .t{min-width:0}
@@ -177,10 +181,10 @@ textarea.input{resize:vertical}
 .strip i.s{background:var(--sun)} .strip i.w{background:var(--wed)} .strip i.e{background:var(--special)}
 .stripcap{font-size:10px;color:var(--faint);margin-top:3px;display:flex;justify-content:space-between;letter-spacing:.04em}
 @media (max-width:760px){
-  .song{grid-template-columns:44px minmax(0,1fr) auto;gap:6px 12px}
-  .song .tempo{grid-column:3;grid-row:1}
-  .song .last{grid-column:2/4;grid-row:2}
-  .song .stripbox{grid-column:2/4;grid-row:3}
+  .song{grid-template-columns:36px 44px minmax(0,1fr) auto;gap:6px 10px}
+  .song .tempo{grid-column:4;grid-row:1}
+  .song .last{grid-column:2/5;grid-row:2}
+  .song .stripbox{grid-column:2/5;grid-row:3}
 }
 
 /* empty / notes */
@@ -432,6 +436,9 @@ const SOLFA = { C:"Do", D:"Re", E:"Mi", F:"Fa", G:"Sol", A:"La", B:"Si" };
 const solfa = k => { if (!k) return ""; const m = /^([A-G])([#b]?)(m?)$/.exec(k); if (!m) return ""; return SOLFA[m[1]] + (m[2] === "#" ? "♯" : m[2] === "b" ? "♭" : "") + (m[3] ? " men" : ""); };
 const keyLabel = k => k ? k.replace("#", "♯").replace(/^([A-G])b/, "$1♭") : "";
 const keyBadge = k => k ? `<span class="key" title="Tonalidad ${esc(k)}"><b>${esc(keyLabel(k))}</b><small>${esc(solfa(k))}</small></span>` : `<span class="key none" title="Sin tonalidad"><b>—</b></span>`;
+const art = (s, cls = "") => s.cover
+  ? `<img class="art ${cls}" src="${esc(s.cover)}" alt="Portada de ${esc(s.title)}" loading="lazy" decoding="async" width="600" height="600" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'art none ${cls}',textContent:'\u266a'}))">`
+  : `<span class="art none ${cls}" aria-hidden="true">\u266a</span>`;
 const tempoEl = b => b ? `<span class="tempo" style="--beat:${(60 / b).toFixed(3)}s" title="${b} pulsos por minuto"><i></i>${b} bpm</span>` : `<span class="tempo none"><i></i>— bpm</span>`;
 const parseKey = s => { if (!s) return ""; let t = s.trim().replace("♯", "#").replace("♭", "b"); t = t.replace(/^([a-g])/, c => c.toUpperCase()); t = t.replace(/(maj|mayor)$/i, "").replace(/(min|menor)$/i, "m"); return ALL_KEYS.includes(t) ? t : ""; };
 const typeForDate = iso => { const w = dOf(iso).getDay(); return w === 0 ? "domingo" : w === 3 ? "miercoles" : "especial"; };
@@ -625,10 +632,11 @@ function renderSongs() {
   }
   const list = filteredSongs();
   if (!list.length) { box.innerHTML = `<div class="empty"><h3>Ninguna canción coincide</h3><p>Prueba otra palabra o quita algún filtro.</p></div>`; return; }
-  box.innerHTML = `<div class="listbar"><span>Tono</span><span>Canción</span><span>Tempo</span><span>Última vez</span><span>Últimas 26 semanas</span></div>
+  box.innerHTML = `<div class="listbar"><span></span><span>Tono</span><span>Canción</span><span>Tempo</span><span>Última vez</span><span>Últimas 26 semanas</span></div>
     <div class="songs">${list.map(s => {
     const l = lastSung(s.id), n = timesSung(s.id);
     return `<button type="button" class="song" data-song="${esc(s.id)}">
+      ${art(s)}
       ${keyBadge(s.key)}
       <div class="t"><h3>${esc(s.title)}</h3><p>${esc(s.artist || "Artista sin registrar")}${s.timeSig ? " · " + esc(s.timeSig) : ""}</p>${(s.themes || []).length ? `<div class="tags">${s.themes.slice(0, 4).map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>` : ""}</div>
       ${tempoEl(+s.bpm)}
@@ -701,7 +709,7 @@ function openSong(id) {
   const s = S.songs.get(id); if (!s) return;
   const hist = stats.get(id) || [];
   openModal(`
-    <div class="panelhead"><div><div class="eyebrow">${esc(s.artist || "Canción")}</div><h1 style="font-size:28px">${esc(s.title)}</h1></div><button class="icon" type="button" data-close="1" aria-label="Cerrar">✕</button></div>
+    <div class="panelhead"><div style="display:flex;gap:14px;min-width:0">${art(s, "big")}<div style="min-width:0"><div class="eyebrow">${esc(s.artist || "Canción")}</div><h1 style="font-size:24px;margin-top:4px">${esc(s.title)}</h1></div></div><button class="icon" type="button" data-close="1" aria-label="Cerrar">✕</button></div>
     <div class="meta">${keyBadge(s.key)}${tempoEl(+s.bpm)}${s.timeSig ? `<span class="tag">${esc(s.timeSig)}</span>` : ""}${(s.themes || []).map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
     ${s.link ? `<p style="margin:0 0 12px"><a href="${/^https?:\/\//i.test(s.link) ? esc(s.link) : "#"}" target="_blank" rel="noopener">Escuchar referencia ↗</a></p>` : ""}
     ${s.notes ? `<div class="note" style="margin-bottom:14px"><b style="color:var(--ink)">Notas:</b> ${esc(s.notes)}</div>` : ""}
