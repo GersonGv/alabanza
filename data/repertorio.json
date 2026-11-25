@@ -37,14 +37,19 @@
       "title": "Cuán firme cimiento"
     },
     "s_digno-para-siempre": {
-      "artist": "PSG",
-      "bpm": "",
+      "artist": "Para Su Gloria",
+      "bpm": 123,
       "createdAt": "2026-11-25T00:00:00.000Z",
-      "key": "",
-      "link": "",
+      "key": "B",
+      "link": "https://www.cifraclub.com/para-su-gloria/digno-para-siempre/",
       "lyrics": "",
-      "notes": "",
-      "themes": [],
+      "notes": "Álbum \"Porque Él Es Santo (En Vivo)\" (2022). \"PSG\" es Para Su Gloria. Tono Si según Cifra Club y ChordU (Tunebat lo lee como Sol♯ menor, su relativa: es el mismo tono). 123 bpm (ChordU mide 122). Circula también una hoja transportada a Fa♯. Compás sin confirmar: ninguna fuente lo indica. Temas deducidos del título; corrígelos si no corresponden.",
+      "themes": [
+        "dignidad de Cristo",
+        "exaltación",
+        "adoración",
+        "santidad de Dios"
+      ],
       "timeSig": "",
       "title": "Digno para siempre",
       "updatedAt": "2026-11-25T00:00:00.000Z"
@@ -67,15 +72,20 @@
       "title": "El digno Dios"
     },
     "s_el-dios-que-adoramos": {
-      "artist": "Adoración La IBI",
-      "bpm": "",
+      "artist": "Adoración La IBI & Sovereign Grace Music (Jonathan Jerez)",
+      "bpm": 110,
       "createdAt": "2026-11-25T00:00:00.000Z",
-      "key": "",
-      "link": "",
+      "key": "F#",
+      "link": "https://sovereigngracemusic.com/wp-content/uploads/el_dios_que_adoramos-guitarra.pdf",
       "lyrics": "",
-      "notes": "",
-      "themes": [],
-      "timeSig": "",
+      "notes": "Letra y música de Jonathan Jerez, © 2013 Sovereign Grace Worship. Canción título del álbum \"El Dios que adoramos\" (el mismo de \"Venid, glorificad a Dios\"). Tono Fa♯ según la hoja de acordes oficial de Sovereign Grace; Multitracks lo escribe como Sol♭, que es el mismo tono. 110 bpm, 4/4, 5:31 (Multitracks). Cifra Club la transcribe en Sol, un semitono arriba. Temas deducidos del título; corrígelos si no corresponden.",
+      "themes": [
+        "adoración",
+        "grandeza de Dios",
+        "gloria de Dios",
+        "llamado a adorar"
+      ],
+      "timeSig": "4/4",
       "title": "El Dios que adoramos",
       "updatedAt": "2026-11-25T00:00:00.000Z"
     },
@@ -233,15 +243,21 @@
       "title": "Nombre sobre todo"
     },
     "s_pon-tu-mirada": {
-      "artist": "Gracia Soberana Música",
-      "bpm": "",
+      "artist": "Gracia Soberana Música feat. Jonathan & Sarah Jerez (George Romanacce, Nathan Stiff, Nic Trout, Kevin Winebarger)",
+      "bpm": 50,
       "createdAt": "2026-11-25T00:00:00.000Z",
-      "key": "",
-      "link": "",
+      "key": "B",
+      "link": "https://sovereigngracemusic.com/wp-content/uploads/Pon-Tu-Mirada-Acordes.pdf",
       "lyrics": "",
-      "notes": "",
-      "themes": [],
-      "timeSig": "",
+      "notes": "Versión en español de \"Turn Your Eyes\" (Sovereign Grace, álbum \"The Glorious Christ\", 2019), que a su vez retoma el coro de Helen H. Lemmel. Álbum \"En Ti Esperamos\" (2022), el mismo de \"Cristo nuestra gloria\". Tono Si, confirmado por la hoja de acordes oficial. El 50 cuenta la negra con puntillo en 6/8, según Multitracks (4:43), que avisa que la grabación tiene cambios de tempo: usa el click. Los sitios de análisis automático dicen 100 en 3/4; es otra lectura del mismo pulso. Acordes base: B, D♯m, G♯m, E.",
+      "themes": [
+        "mirar a Cristo",
+        "gloria de Cristo",
+        "consuelo",
+        "esperanza",
+        "fe"
+      ],
+      "timeSig": "6/8",
       "title": "Pon tu mirada",
       "updatedAt": "2026-11-25T00:00:00.000Z"
     },
@@ -279,16 +295,22 @@
       "title": "Todo lo que creó el Rey"
     },
     "s_vasijas-rotas": {
-      "artist": "Hillsong",
-      "bpm": "",
+      "artist": "Hillsong en Español (Joel Houston, Jonas Myrin)",
+      "bpm": 68,
       "createdAt": "2026-11-25T00:00:00.000Z",
-      "key": "",
-      "link": "",
+      "key": "Bb",
+      "link": "https://www.multitracks.com/songs/Hillsong-en-Espanol/Sublime-Gracia/Vasijas-Rotas-(Sublime-Gracia)/overview/",
       "lyrics": "",
-      "notes": "",
-      "themes": [],
-      "timeSig": "",
-      "title": "Vasijas rotas",
+      "notes": "Versión en español de \"Broken Vessels (Amazing Grace)\" (Joel Houston, Jonas Myrin), del álbum \"No Other Name\" (2014). OJO, HAY DOS GRABACIONES Y NO ESTÁN EN EL MISMO TONO: la de 2015 (álbum \"En Esto Creo\") suena en Sol a unos 70 bpm (141 a doble tiempo según Tunebat y songbpm), y la de 2025 (álbum \"Sublime Gracia\") está en Si♭ a 68 bpm, 4/4, 5:24 según Multitracks. Aquí quedó la de 2025, que es la única con ficha oficial. Cambia el tono si el equipo canta la de 2015.",
+      "themes": [
+        "gracia",
+        "quebranto",
+        "sanidad",
+        "misericordia",
+        "testimonio"
+      ],
+      "timeSig": "4/4",
+      "title": "Vasijas rotas (Sublime Gracia)",
       "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_venid-glorificad-a-dios": {
