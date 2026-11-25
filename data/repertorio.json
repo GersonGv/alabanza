@@ -299,20 +299,23 @@
       "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_por-todo-el-mundo": {
-      "artist": "Conferencia Expositores",
+      "artist": "Conferencia Expositores (Keith Getty, Stuart Townend)",
       "bpm": null,
       "createdAt": "2026-11-18T12:00:00.000Z",
-      "key": "",
-      "link": "https://open.spotify.com/track/3Qe4rkrlvAPbZTU6b8mVBo",
+      "key": "D",
+      "link": "https://himnosdegracia.com/por-todo-el-mundo/",
       "lyrics": "",
-      "notes": "Álbum Himnos de Gracia – Conferencia Expositores 2020 (2:59). Tonalidad SIN CONFIRMAR: las transcripciones dicen Re (Chordify) o Sol (Ultimate Guitar). Anota aquí el tono y tempo en que la canta el equipo. Temas deducidos del título; corrígelos si no corresponden.",
+      "notes": "Versión en español de \"Across the Lands\" (Keith Getty, Stuart Townend); es el himno #87 de la colección Himnos de Gracia, la misma que da nombre al álbum \"Himnos de Gracia – Conferencia Expositores 2020\" (2:59). Basado en Mateo 28:18. Tono Re: así lo publica el himnario y así lo lee Chordify. Ultimate Guitar transcribe la grabación en Sol y Cifra Club publica la versión de los Getty en Do, así que confirma de oído en qué tono la canta el equipo. TEMPO SIN CONFIRMAR: ninguna fuente fiable lo publica (una transcripción de 2024 mide 176, que serían 88 a tiempo normal). Anota aquí el que usen.",
       "themes": [
         "misiones",
         "las naciones",
-        "evangelio"
+        "evangelio",
+        "Mateo 28:18",
+        "gloria de Cristo"
       ],
       "timeSig": "",
-      "title": "Por todo el mundo"
+      "title": "Por todo el mundo",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     },
     "s_su-gracia-es-mayor": {
       "artist": "Conferencia Expositores (Matt Boswell, Matt Papa)",
