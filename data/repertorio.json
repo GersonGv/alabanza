@@ -230,6 +230,25 @@
       "title": "Mi alma esperará",
       "updatedAt": "2026-11-25T00:00:00.000Z"
     },
+    "s_mi-alma-te-canta": {
+      "artist": "Adoración La IBI",
+      "bpm": 108,
+      "cover": "data/covers/mirare-al-rey.jpg",
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "key": "A",
+      "link": "https://www.multitracks.com/songs/Adoracion-La-IBI/Mirare-Al-Rey/Mi-Alma-Te-Canta/overview/",
+      "lyrics": "",
+      "notes": "Álbum \"Miraré al Rey\" (2023), el mismo de \"Tú eres santo\". Tono La, 108 bpm y 4/4 según Multitracks; Secuencias coincide en 108 y Shazam mide 107. Acordes base: A, D, E, F♯m. No la confundas con \"Mi alma esperará\", de Gracia Soberana, que ya está en el repertorio y es otra canción. Temas deducidos del título; corrígelos si no corresponden.",
+      "themes": [
+        "el canto",
+        "adoración",
+        "alabanza",
+        "gratitud"
+      ],
+      "timeSig": "4/4",
+      "title": "Mi alma te canta",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
     "s_mi-esperanza-esta-en-jesus": {
       "artist": "Jonathan & Sarah Jerez",
       "bpm": 120,
@@ -522,6 +541,19 @@
       ],
       "type": "domingo",
       "updatedAt": "2026-11-18T12:00:00.000Z"
+    },
+    "v_2026-11-29-domingo": {
+      "date": "2026-11-29",
+      "name": "",
+      "notes": "Tema: El canto de Dios (Sofonías 3:17)",
+      "songIds": [
+        "s_su-gracia-es-mayor",
+        "s_nada-en-la-tierra",
+        "s_la-salvacion-es-del-senor",
+        "s_mi-alma-te-canta"
+      ],
+      "type": "domingo",
+      "updatedAt": "2026-11-25T00:00:00.000Z"
     }
   }
 }
