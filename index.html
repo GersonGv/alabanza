@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Repertorio de Alabanza</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a setlist workbench — sticky header with four tabs, each view a single working column; songs read as rows on a chord chart, with a 26-week strip showing when each was sung. */
+:root{
+  --bg:#F1F2F7; --surface:#FFFFFF; --surface-2:#F7F7FB; --ink:#191A2C; --muted:#5E6179; --line:#DCDEE8;
+  --accent:#3A3ED6; --accent-ink:#FFFFFF; --accent-soft:#E7E8FC;
+  --sun:#3A3ED6; --wed:#0B8273; --wed-soft:#DDF3EF; --special:#B8730F; --special-soft:#FBEBD2;
+  --danger:#C23B3B; --danger-soft:#FBE3E3; --cell:#E4E6EF;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11121B; --surface:#1A1B29; --surface-2:#202133; --ink:#ECECF6; --muted:#9C9FBA; --line:#2D2F45;
+  --accent:#9195FF; --accent-ink:#11121B; --accent-soft:#272A56;
+  --sun:#9195FF; --wed:#45CDB7; --wed-soft:#16332F; --special:#F1B24E; --special-soft:#3A2C14;
+  --danger:#FF8A8A; --danger-soft:#3D1D22; --cell:#2A2C40; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11121B; --surface:#1A1B29; --surface-2:#202133; --ink:#ECECF6; --muted:#9C9FBA; --line:#2D2F45;
+  --accent:#9195FF; --accent-ink:#11121B; --accent-soft:#272A56;
+  --sun:#9195FF; --wed:#45CDB7; --wed-soft:#16332F; --special:#F1B24E; --special-soft:#3A2C14;
+  --danger:#FF8A8A; --danger-soft:#3D1D22; --cell:#2A2C40; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.brand svg{flex:none}
+nav.tabs{display:flex;gap:4px;margin-left:auto;overflow-x:auto;max-width:100%}
+nav.tabs a{padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--muted);font-weight:600;white-space:nowrap}
+nav.tabs a:hover{color:var(--ink);background:var(--surface-2)}
+nav.tabs a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+.status{font-size:12px;color:var(--muted)}
+
+main{padding-block:28px 80px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.015em}
+h1{font-size:clamp(26px,4vw,36px);font-weight:800}
+h2{font-size:22px;font-weight:700}
+h3{font-size:17px;font-weight:700}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600}
+.lede{color:var(--muted);max-width:62ch;margin:6px 0 0}
+.viewhead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+
+/* buttons & inputs */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);padding:9px 15px;border-radius:999px;font-weight:600;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;border-color:transparent;color:var(--muted)}
+.btn.ghost:hover{color:var(--ink);background:var(--surface-2)}
+.btn.danger{color:var(--danger);border-color:var(--danger-soft);background:var(--danger-soft)}
+.btn.sm{padding:5px 11px;font-size:13px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field label{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.03em}
+.input,select.input,textarea.input{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 11px;min-width:0}
+textarea.input{resize:vertical}
+.input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+
+/* summary strip */
+.summary{display:flex;flex-wrap:wrap;gap:10px 28px;padding:14px 0 18px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.summary div{display:flex;flex-direction:column}
+.summary b{font-family:var(--display);font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.summary span{font-size:12px;color:var(--muted)}
+
+/* filters */
+.filters{display:grid;grid-template-columns:minmax(0,2.2fr) repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
+@media (max-width:760px){.filters{grid-template-columns:1fr 1fr}.filters .search{grid-column:1/-1}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:13px;cursor:pointer;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.tag{display:inline-block;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:1px 9px;font-size:12px;color:var(--muted);white-space:nowrap}
+
+/* key badge & tempo */
+.key{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:46px;height:46px;border-radius:10px;border:1.5px solid var(--ink);font-family:var(--mono);line-height:1;flex:none}
+.key b{font-size:15px}
+.key small{font-size:9.5px;color:var(--muted);margin-top:3px;font-family:var(--body);font-weight:600}
+.key.none{border-style:dashed;border-color:var(--line);color:var(--muted)}
+.tempo{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tempo i{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:beat var(--beat,1s) ease-out infinite}
+.tempo.none i{background:var(--line);animation:none}
+@keyframes beat{0%{transform:scale(1.5);opacity:1}60%{transform:scale(.8);opacity:.35}100%{transform:scale(.8);opacity:.35}}
+@media (prefers-reduced-motion:reduce){.tempo i{animation:none}}
+
+/* song rows */
+.songs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.song{display:grid;grid-template-columns:46px minmax(0,1fr) 92px 150px 140px;gap:16px;align-items:center;padding:12px 8px;border-bottom:1px solid var(--line);cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;text-align:left;width:100%}
+.song:hover{background:var(--surface)}
+.song .t{min-width:0}
+.song .t h3{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song .t p{margin:1px 0 0;color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song .t .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.last{font-size:13px}
+.last b{display:block;font-weight:600}
+.last span{color:var(--muted);font-size:12px}
+.strip{display:grid;grid-template-columns:repeat(26,1fr);gap:1.5px;height:18px}
+.strip i{border-radius:1.5px;background:var(--cell)}
+.strip i.s{background:var(--sun)} .strip i.w{background:var(--wed)} .strip i.e{background:var(--special)}
+.stripcap{font-size:10.5px;color:var(--muted);margin-top:3px;display:flex;justify-content:space-between}
+@media (max-width:760px){
+  .song{grid-template-columns:46px minmax(0,1fr) auto;gap:6px 12px}
+  .song .tempo{grid-column:3;grid-row:1}
+  .song .last{grid-column:2/4;grid-row:2}
+  .song .stripbox{grid-column:2/4;grid-row:3}
+}
+
+/* empty / notes */
+.empty{border:1.5px dashed var(--line);border-radius:14px;padding:36px 24px;text-align:center;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:12px}
+.empty h3{color:var(--ink)}
+.empty p{max-width:52ch;margin:0}
+.note{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;font-size:13px;color:var(--muted)}
+
+/* services */
+.month{margin-top:26px}
+.month h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-family:var(--body);font-weight:600;margin-bottom:10px}
+.svc{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:16px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+.date{display:flex;flex-direction:column;align-items:center;border-right:1px solid var(--line);padding-right:14px}
+.date b{font-family:var(--display);font-size:30px;font-weight:800;line-height:1}
+.date span{font-size:12px;color:var(--muted);text-transform:capitalize}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;border-radius:999px;padding:2px 10px}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.domingo{color:var(--sun);background:var(--accent-soft)}
+.pill.miercoles{color:var(--wed);background:var(--wed-soft)}
+.pill.especial{color:var(--special);background:var(--special-soft)}
+.setlist{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;counter-reset:n}
+.setlist li{display:flex;align-items:center;gap:10px;counter-increment:n;min-width:0}
+.setlist li::before{content:counter(n);font-family:var(--mono);font-size:11px;color:var(--muted);width:14px;text-align:right;flex:none}
+.setlist button{background:none;border:0;padding:0;cursor:pointer;text-align:left;font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.setlist button:hover{color:var(--accent)}
+.mk{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line);border-radius:5px;padding:0 5px;color:var(--muted);flex:none}
+.svc .actions{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+@media (max-width:600px){.svc{grid-template-columns:52px minmax(0,1fr)}.svc .actions{grid-column:1/-1;flex-direction:row;justify-content:flex-end}.date b{font-size:24px}}
+
+/* rest view */
+.restctl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.restctl input[type=range]{flex:1;min-width:160px;accent-color:var(--accent)}
+.restctl output{font-family:var(--mono);font-weight:700}
+.cols{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px}
+@media (max-width:860px){.cols{grid-template-columns:1fr}}
+.rest{display:grid;grid-template-columns:46px minmax(0,1fr) auto;gap:14px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--line);cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;text-align:left;width:100%}
+.rest:hover{background:var(--surface)}
+.rest h3{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rest p{margin:0;font-size:12.5px;color:var(--muted)}
+.ago{font-family:var(--mono);font-size:13px;text-align:right;white-space:nowrap}
+.ago small{display:block;font-family:var(--body);color:var(--muted);font-size:11px}
+.bar{height:6px;background:var(--cell);border-radius:3px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--accent)}
+.rank{display:grid;grid-template-columns:minmax(0,1fr) 34px;gap:4px 10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.rank b{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+
+/* recommend */
+.ask{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.ask textarea{font-size:17px;min-height:96px}
+.askrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;align-items:end}
+@media (max-width:760px){.askrow{grid-template-columns:1fr 1fr}}
+.check{display:flex;gap:8px;align-items:center;font-size:14px}
+.recs{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.rec{display:grid;grid-template-columns:28px 46px minmax(0,1fr) auto;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.rec .n{font-family:var(--mono);font-weight:700;color:var(--muted);padding-top:12px}
+.rec h3{font-size:16px}
+.rec p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.moment{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--accent)}
+@media (max-width:600px){.rec{grid-template-columns:46px minmax(0,1fr)}.rec .n{display:none}.rec .tempo{grid-column:2}}
+.flow{border-left:3px solid var(--accent);padding:4px 0 4px 14px;margin:6px 0 0;color:var(--ink)}
+.spinner{width:16px;height:16px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* modal */
+.overlay{position:fixed;inset:0;z-index:20;background:rgba(10,11,20,.5);display:flex;justify-content:flex-end}
+.panel{background:var(--bg);width:min(640px,100%);height:100%;overflow-y:auto;padding:22px max(20px,env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) 20px;padding-top:calc(22px + env(safe-area-inset-top,0px));box-shadow:-20px 0 60px rgba(0,0,0,.2)}
+.panelhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:520px){.grid3{grid-template-columns:1fr 1fr}}
+.form{display:flex;flex-direction:column;gap:14px}
+.formactions{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;margin-top:6px}
+.lyrics{white-space:pre-wrap;font-size:16px;line-height:1.7;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:0;font-family:var(--body);overflow-wrap:anywhere}
+.meta{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.hist{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:6px}
+.hist li{display:flex;justify-content:space-between;gap:10px;font-size:14px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.picker{border:1px solid var(--line);border-radius:10px;background:var(--surface);max-height:220px;overflow-y:auto}
+.picker button{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:left;padding:8px 12px;background:none;border:0;border-bottom:1px solid var(--line);cursor:pointer}
+.picker button:hover{background:var(--surface-2)}
+.picker button span{color:var(--muted);font-size:12px;white-space:nowrap}
+.chosen{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.chosen li{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
+.chosen li .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+.chosen li .num{font-family:var(--mono);font-size:12px;color:var(--muted);width:18px;text-align:right}
+.icon{background:none;border:0;cursor:pointer;color:var(--muted);padding:3px 6px;border-radius:6px;font-size:14px;line-height:1}
+.icon:hover{color:var(--ink);background:var(--surface-2)}
+.preview{display:flex;flex-direction:column;gap:10px}
+.preview .pv{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.new{font-size:11px;font-weight:700;color:var(--special);text-transform:uppercase;letter-spacing:.06em}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:600;z-index:30;max-width:calc(100% - 32px)}
+.localbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:16px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+.localbar p{margin:0;max-width:70ch}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--danger-soft);border-radius:10px;padding:10px 12px;color:var(--danger);font-weight:600;font-size:14px}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="8" fill="var(--accent)"/><g stroke="var(--accent-ink)" stroke-width="1.2" opacity=".55"><line x1="6" y1="10" x2="24" y2="10"/><line x1="6" y1="14" x2="24" y2="14"/><line x1="6" y1="18" x2="24" y2="18"/><line x1="6" y1="22" x2="24" y2="22"/></g><ellipse cx="13" cy="20" rx="3.3" ry="2.4" fill="var(--accent-ink)" transform="rotate(-20 13 20)"/><rect x="15.4" y="7" width="1.6" height="13" fill="var(--accent-ink)"/></svg>
+      <span>Repertorio</span>
+    </div>
+    <nav class="tabs" aria-label="Secciones">
+      <a href="#repertorio" data-view="repertorio">Repertorio</a>
+      <a href="#servicios" data-view="servicios">Servicios</a>
+      <a href="#descanso" data-view="descanso">Sin cantar</a>
+      <a href="#recomendar" data-view="recomendar">Recomendar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="v-repertorio" data-v="repertorio">
+    <div class="viewhead">
+      <div>
+        <div class="eyebrow">Nuestro repertorio</div>
+        <h1>Canciones</h1>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" id="btnImport2" type="button">Importar lista</button>
+        <button class="btn primary" id="btnNewSong" type="button">+ Nueva canción</button>
+      </div>
+    </div>
+    <div class="summary" id="summary"></div>
+    <div class="filters">
+      <div class="field search"><label for="q">Buscar por título, artista, letra o tema</label><input class="input" id="q" type="search" placeholder="Ej. “gracia”, “Hillsong”, “cruz”…" autocomplete="off"></div>
+      <div class="field"><label for="fKey">Tonalidad</label><select class="input" id="fKey"><option value="">Todas</option></select></div>
+      <div class="field"><label for="fTempo">Tempo</label><select class="input" id="fTempo"><option value="">Todos</option><option value="lento">Lento (&lt; 80 bpm)</option><option value="medio">Medio (80–110)</option><option value="rapido">Rápido (&gt; 110)</option></select></div>
+      <div class="field"><label for="fSort">Ordenar</label><select class="input" id="fSort"><option value="az">Alfabético</option><option value="recent">Cantadas recientemente</option><option value="oldest">Hace más tiempo</option><option value="most">Más cantadas</option></select></div>
+    </div>
+    <div class="chips" id="themeChips"></div>
+    <div id="songList"></div>
+  </section>
+
+  <section id="v-servicios" data-v="servicios" hidden>
+    <div class="viewhead">
+      <div>
+        <div class="eyebrow">Domingos, miércoles y eventos especiales</div>
+        <h1>Servicios</h1>
+        <p class="lede">Cada servicio guarda qué se cantó y en qué orden. Así el repertorio sabe cuándo se cantó cada canción por última vez.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" id="btnImport" type="button">Importar lista</button>
+        <button class="btn primary" id="btnNewSvc" type="button">+ Nuevo servicio</button>
+      </div>
+    </div>
+    <div class="chips" id="svcFilter">
+      <button class="chip" type="button" data-t="" aria-pressed="true">Todos</button>
+      <button class="chip" type="button" data-t="domingo" aria-pressed="false">Domingos</button>
+      <button class="chip" type="button" data-t="miercoles" aria-pressed="false">Miércoles</button>
+      <button class="chip" type="button" data-t="especial" aria-pressed="false">Eventos especiales</button>
+    </div>
+    <div id="svcList"></div>
+  </section>
+
+  <section id="v-descanso" data-v="descanso" hidden>
+    <div class="viewhead">
+      <div>
+        <div class="eyebrow">Para rotar el repertorio</div>
+        <h1>Canciones sin cantar</h1>
+        <p class="lede">Canciones que no se han entonado en un tiempo, y las que más se están repitiendo.</p>
+      </div>
+    </div>
+    <div class="restctl">
+      <label for="weeks"><b>Sin cantar hace al menos</b></label>
+      <input type="range" id="weeks" min="2" max="52" step="1" value="8">
+      <output id="weeksOut" for="weeks">8 semanas</output>
+    </div>
+    <div class="cols">
+      <div>
+        <h2 style="margin-bottom:6px">En descanso</h2>
+        <p class="lede" style="margin:0 0 10px;font-size:14px" id="restCount"></p>
+        <div id="restList"></div>
+      </div>
+      <div>
+        <h2 style="margin-bottom:6px">En rotación</h2>
+        <p class="lede" style="margin:0 0 10px;font-size:14px">Más cantadas en los últimos 3 meses.</p>
+        <div id="hotList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-recomendar" data-v="recomendar" hidden>
+    <div class="viewhead">
+      <div>
+        <div class="eyebrow">Recomendaciones del repertorio</div>
+        <h1>¿De qué quieres que trate?</h1>
+        <p class="lede">Describe el tema, el pasaje o el momento del servicio. Claude revisa la letra, los temas, el tempo y cuándo se cantó cada canción, y te propone una lista en orden.</p>
+      </div>
+    </div>
+    <form class="ask" id="askForm">
+      <textarea class="input" id="askText" rows="3" placeholder="Ej. La fidelidad de Dios en medio de la prueba; prédica sobre Lamentaciones 3:22-23. Cerrar con un tiempo de entrega."></textarea>
+      <div class="chips" style="margin:0" id="askIdeas"></div>
+      <div class="askrow">
+        <div class="field"><label for="askType">Servicio</label><select class="input" id="askType"><option value="domingo">Domingo</option><option value="miercoles">Miércoles</option><option value="especial">Evento especial</option></select></div>
+        <div class="field"><label for="askN">Cantidad</label><select class="input" id="askN"><option>3</option><option selected>4</option><option>5</option><option>6</option><option>8</option></select></div>
+        <label class="check" for="askFresh"><input type="checkbox" id="askFresh" checked> Preferir las que no se cantan hace tiempo</label>
+        <button class="btn primary" id="askBtn" type="submit">Recomendar</button>
+      </div>
+    </form>
+    <div id="recOut"></div>
+  </section>
+</main>
+
+<footer class="wrap localbar" id="localBar" hidden>
+  <p>Estás usando la versión independiente: los cambios se guardan <b>en este navegador</b>. Descarga una copia para respaldarlos o pasarlos a otro dispositivo.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" type="button" id="exportBtn">Descargar copia</button><label class="btn sm" for="importFile">Importar copia</label><input type="file" id="importFile" accept="application/json,.json" hidden></div>
+</footer>
+
+<div id="modalRoot"></div>
+<div id="toastRoot"></div>
+
+<script>
+(() => {
+"use strict";
+// ---------- helpers ----------
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ ]+/g, " ").replace(/\s+/g, " ").trim();
+const pad = n => String(n).padStart(2, "0");
+const isoOf = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const dOf = iso => { const [y, m, d] = iso.split("-").map(Number); return new Date(y, m - 1, d); };
+const TODAY = isoOf(new Date());
+const daysSince = iso => Math.round((dOf(TODAY) - dOf(iso)) / 864e5);
+const fmtLong = iso => { const t = dOf(iso).toLocaleDateString("es", { weekday: "long", day: "numeric", month: "long", year: "numeric" }); return t.charAt(0).toUpperCase() + t.slice(1); };
+const fmtShort = iso => dOf(iso).toLocaleDateString("es", { day: "numeric", month: "short", year: "numeric" });
+const agoText = days => {
+  if (days < 0) return "programada";
+  if (days === 0) return "hoy";
+  if (days === 1) return "ayer";
+  if (days < 14) return `hace ${days} días`;
+  if (days < 60) return `hace ${Math.round(days / 7)} semanas`;
+  if (days < 365) return `hace ${Math.round(days / 30.4)} meses`;
+  const y = days / 365; return `hace ${y < 1.5 ? "1 año" : Math.round(y) + " años"}`;
+};
+const TYPES = { domingo: "Domingo", miercoles: "Miércoles", especial: "Evento especial" };
+const KEYS = ["C","C#","Db","D","Eb","E","F","F#","Gb","G","Ab","A","Bb","B"];
+const ALL_KEYS = [...KEYS, ...KEYS.map(k => k + "m")];
+const SOLFA = { C:"Do", D:"Re", E:"Mi", F:"Fa", G:"Sol", A:"La", B:"Si" };
+const solfa = k => { if (!k) return ""; const m = /^([A-G])([#b]?)(m?)$/.exec(k); if (!m) return ""; return SOLFA[m[1]] + (m[2] === "#" ? "♯" : m[2] === "b" ? "♭" : "") + (m[3] ? " men" : ""); };
+const keyLabel = k => k ? k.replace("#", "♯").replace(/^([A-G])b/, "$1♭") : "";
+const keyBadge = k => k ? `<span class="key" title="Tonalidad ${esc(k)}"><b>${esc(keyLabel(k))}</b><small>${esc(solfa(k))}</small></span>` : `<span class="key none" title="Sin tonalidad"><b>—</b></span>`;
+const tempoEl = b => b ? `<span class="tempo" style="--beat:${(60 / b).toFixed(3)}s" title="${b} pulsos por minuto"><i></i>${b} bpm</span>` : `<span class="tempo none"><i></i>— bpm</span>`;
+const parseKey = s => { if (!s) return ""; let t = s.trim().replace("♯", "#").replace("♭", "b"); t = t.replace(/^([a-g])/, c => c.toUpperCase()); t = t.replace(/(maj|mayor)$/i, "").replace(/(min|menor)$/i, "m"); return ALL_KEYS.includes(t) ? t : ""; };
+const typeForDate = iso => { const w = dOf(iso).getDay(); return w === 0 ? "domingo" : w === 3 ? "miercoles" : "especial"; };
+
+function toast(msg) {
+  const el = document.createElement("div"); el.className = "toast"; el.setAttribute("role", "status"); el.textContent = msg;
+  $("#toastRoot").replaceChildren(el); setTimeout(() => el.remove(), 3200);
+}
+
+// ---------- state ----------
+const S = { songs: new Map(), services: [], loaded: { songs: false, services: false }, db: null, sample: undefined, readOnly: false, offline: false,
+  f: { q: "", key: "", tempo: "", sort: "az", themes: new Set() }, svcType: "", weeks: 8, recs: null };
+let stats = new Map(); // songId -> [{date,type,svcId}] desc
+
+function computeStats() {
+  stats = new Map();
+  const sorted = [...S.services].sort((a, b) => b.date.localeCompare(a.date));
+  for (const sv of sorted) for (const id of (sv.songIds || [])) {
+    if (!stats.has(id)) stats.set(id, []);
+    const arr = stats.get(id); if (!arr.some(x => x.svcId === sv.id)) arr.push({ date: sv.date, type: sv.type, svcId: sv.id, name: sv.name });
+  }
+}
+const pastHist = id => (stats.get(id) || []).filter(h => h.date <= TODAY);
+const lastSung = id => pastHist(id)[0]?.date || null;
+const timesSung = id => pastHist(id).length;
+
+// ---------- db ----------
+async function save(path, data) {
+  if (!S.db) { toast("No hay conexión con la base de datos."); throw new Error("no db"); }
+  try { await S.db.doc(path).set(data); }
+  catch (e) {
+    if (e && e.code === "invalid_argument") { S.readOnly = true; toast("No tienes permiso para editar este repertorio."); }
+    else if (e && e.code === "quota_exceeded") toast("La base de datos está llena. Borra registros antiguos e inténtalo de nuevo.");
+    else toast("No se pudo guardar. Inténtalo de nuevo.");
+    throw e;
+  }
+}
+async function remove(path) { try { await S.db.doc(path).delete(); } catch (e) { toast("No se pudo borrar."); throw e; } }
+const newId = p => p + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+
+// ---------- local mode (GitHub Pages / outside claude.ai) ----------
+const LS_KEY = "repertorio-alabanza-v1";
+const stamp = d => (d && (d.updatedAt || d.createdAt)) || "";
+async function makeLocalDb() {
+  let st = null;
+  try { st = JSON.parse(localStorage.getItem(LS_KEY) || "null"); } catch {}
+  if (!st || typeof st !== "object") st = { songs: {}, services: {}, deleted: [] };
+  st.songs ||= {}; st.services ||= {}; st.deleted ||= [];
+  try {
+    const r = await fetch("data/repertorio.json", { cache: "no-cache" });
+    if (r.ok) { const seed = await r.json(); mergeInto(st, seed); }
+  } catch {}
+  const listeners = { songs: [], services: [] };
+  const persist = () => { try { localStorage.setItem(LS_KEY, JSON.stringify(st)); } catch {} };
+  const snap = c => { const docs = Object.entries(st[c]).map(([id, d]) => ({ id, exists: true, data: () => d })); return { docs, size: docs.length, empty: !docs.length, metadata: { fromCache: false, hasPendingWrites: false } }; };
+  const emit = c => listeners[c].forEach(fn => fn(snap(c)));
+  persist();
+  return {
+    state: () => st,
+    replace(next) { st = next; persist(); emit("songs"); emit("services"); },
+    collection: c => ({ onSnapshot(fn) { listeners[c].push(fn); setTimeout(() => fn(snap(c)), 0); return () => {}; } }),
+    doc: path => { const [c, id] = path.split("/"); return {
+      async set(d) { st[c][id] = JSON.parse(JSON.stringify(d)); st.deleted = st.deleted.filter(x => x !== path); persist(); emit(c); },
+      async delete() { delete st[c][id]; if (!st.deleted.includes(path)) st.deleted.push(path); persist(); emit(c); } }; }
+  };
+}
+function mergeInto(st, seed) {
+  for (const c of ["songs", "services"]) for (const [id, d] of Object.entries(seed?.[c] || {})) {
+    if (st.deleted.includes(c + "/" + id)) continue;
+    const cur = st[c][id];
+    if (!cur || stamp(d) > stamp(cur)) st[c][id] = d;
+  }
+}
+function setupLocalBar() {
+  const bar = $("#localBar"); bar.hidden = false;
+  $("#exportBtn").onclick = () => {
+    const data = { app: "repertorio-alabanza", exportedAt: new Date().toISOString(), songs: S.db.state().songs, services: S.db.state().services };
+    const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
+    const a = document.createElement("a"); a.href = url; a.download = `repertorio-${TODAY}.json`; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000); toast("Copia descargada");
+  };
+  $("#importFile").onchange = async e => {
+    const f = e.target.files[0]; e.target.value = ""; if (!f) return;
+    try {
+      const data = JSON.parse(await f.text());
+      if (!data || typeof data.songs !== "object" || typeof data.services !== "object") throw 0;
+      const st = JSON.parse(JSON.stringify(S.db.state()));
+      for (const c of ["songs", "services"]) for (const [id, d] of Object.entries(data[c])) { st[c][id] = d; st.deleted = st.deleted.filter(x => x !== c + "/" + id); }
+      S.db.replace(st); toast(`Copia importada: ${Object.keys(data.songs).length} canciones, ${Object.keys(data.services).length} servicios`);
+    } catch { toast("Ese archivo no es una copia válida del repertorio."); }
+  };
+}
+
+async function boot() {
+  let db = await window.claude?.use?.("db").catch(() => null);
+  if (!db) { db = await makeLocalDb(); S.local = true; setupLocalBar(); }
+  S.db = db;
+  const timer = setTimeout(() => { if (!S.loaded.songs || !S.loaded.services) { S.slow = true; renderAll(); } }, 10000);
+  const done = () => { if (S.loaded.songs && S.loaded.services) clearTimeout(timer); };
+  db.collection("songs").onSnapshot(snap => {
+    S.songs = new Map(snap.docs.map(d => [d.id, { id: d.id, ...d.data() }]));
+    if (!snap.metadata.fromCache) S.loaded.songs = true; else if (snap.size) S.loaded.songs = true;
+    done(); renderAll();
+  }, () => { S.loaded.songs = true; S.slow = true; renderAll(); });
+  db.collection("services").onSnapshot(snap => {
+    S.services = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    if (!snap.metadata.fromCache || snap.size) S.loaded.services = true;
+    done(); computeStats(); renderAll();
+  }, () => { S.loaded.services = true; S.slow = true; renderAll(); });
+}
+
+// ---------- routing ----------
+const VIEWS = ["repertorio", "servicios", "descanso", "recomendar"];
+function route() {
+  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "repertorio";
+  document.querySelectorAll("[data-v]").forEach(s => s.hidden = s.dataset.v !== v);
+  document.querySelectorAll("nav.tabs a").forEach(a => a.dataset.view === v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+}
+addEventListener("hashchange", route);
+
+// ---------- render: repertorio ----------
+function loadingOrEmpty(kind) {
+  if (S.offline) return `<div class="empty"><h3>Abre esta página en claude.ai para ver el repertorio</h3><p>Las canciones y servicios se guardan en la base de datos del artefacto, que solo está disponible dentro del visor de Claude.</p></div>`;
+  if (!S.loaded.songs || !S.loaded.services) return `<div class="empty">${S.slow ? "<h3>Aún no se pudo cargar el repertorio</h3><p>Revisa tu conexión; la página seguirá intentándolo.</p>" : "<span class='spinner'></span><p>Cargando repertorio…</p>"}</div>`;
+  return null;
+}
+
+function weekStrip(id) {
+  const cells = Array(26).fill("");
+  for (const h of pastHist(id)) { const w = Math.floor(daysSince(h.date) / 7); if (w >= 0 && w < 26) cells[25 - w] = h.type === "domingo" ? "s" : h.type === "miercoles" ? "w" : "e"; }
+  return `<div class="strip" aria-hidden="true">${cells.map(c => `<i class="${c}"></i>`).join("")}</div>`;
+}
+
+function filteredSongs() {
+  const { q, key, tempo, sort, themes } = S.f; const nq = norm(q);
+  let list = [...S.songs.values()].filter(s => {
+    if (key && s.key !== key) return false;
+    const b = +s.bpm || 0;
+    if (tempo === "lento" && !(b && b < 80)) return false;
+    if (tempo === "medio" && !(b >= 80 && b <= 110)) return false;
+    if (tempo === "rapido" && !(b > 110)) return false;
+    if (themes.size && !(s.themes || []).some(t => themes.has(norm(t)))) return false;
+    if (nq) { const hay = norm([s.title, s.artist, (s.themes || []).join(" "), s.lyrics, s.notes].join(" ")); if (!nq.split(" ").every(w => hay.includes(w))) return false; }
+    return true;
+  });
+  const az = (a, b) => a.title.localeCompare(b.title, "es");
+  if (sort === "az") list.sort(az);
+  if (sort === "recent") list.sort((a, b) => (lastSung(b.id) || "").localeCompare(lastSung(a.id) || "") || az(a, b));
+  if (sort === "oldest") list.sort((a, b) => (lastSung(a.id) || "").localeCompare(lastSung(b.id) || "") || az(a, b));
+  if (sort === "most") list.sort((a, b) => timesSung(b.id) - timesSung(a.id) || az(a, b));
+  return list;
+}
+
+function renderSummary() {
+  const songs = [...S.songs.values()];
+  const past = S.services.filter(s => s.date <= TODAY).sort((a, b) => b.date.localeCompare(a.date));
+  const lastSvc = past[0];
+  const resting = songs.filter(s => { const l = lastSung(s.id); return !l || daysSince(l) >= 56; }).length;
+  const ym = TODAY.slice(0, 7);
+  $("#summary").innerHTML = `
+    <div><b>${songs.length}</b><span>canciones</span></div>
+    <div><b>${S.services.filter(s => s.date.startsWith(ym)).length}</b><span>servicios este mes</span></div>
+    <div><b>${resting}</b><span>sin cantar en 8+ semanas</span></div>
+    <div><b style="font-size:16px;padding-top:6px">${lastSvc ? esc(fmtShort(lastSvc.date)) : "—"}</b><span>${lastSvc ? "último servicio · " + esc(TYPES[lastSvc.type] || "") : "sin servicios aún"}</span></div>`;
+}
+
+function renderKeyOptions() {
+  const used = new Set([...S.songs.values()].map(s => s.key).filter(Boolean));
+  const sel = $("#fKey"); const cur = sel.value;
+  sel.innerHTML = `<option value="">Todas</option>` + ALL_KEYS.filter(k => used.has(k)).map(k => `<option value="${k}">${esc(keyLabel(k))} · ${esc(solfa(k))}</option>`).join("");
+  sel.value = used.has(cur) ? cur : "";
+}
+
+function renderThemeChips() {
+  const count = new Map();
+  for (const s of S.songs.values()) for (const t of (s.themes || [])) { const n = norm(t); if (!n) continue; const c = count.get(n) || { label: t, n: 0 }; c.n++; count.set(n, c); }
+  const top = [...count.entries()].sort((a, b) => b[1].n - a[1].n).slice(0, 16);
+  $("#themeChips").innerHTML = top.length ? `<span class="eyebrow" style="align-self:center;margin-right:4px">Temas</span>` + top.map(([k, v]) => `<button type="button" class="chip" data-theme="${esc(k)}" aria-pressed="${S.f.themes.has(k)}">${esc(v.label)} <span style="opacity:.6">${v.n}</span></button>`).join("") : "";
+}
+
+function renderSongs() {
+  const box = $("#songList");
+  const le = loadingOrEmpty(); if (le) { box.innerHTML = le; return; }
+  if (!S.songs.size) {
+    box.innerHTML = `<div class="empty"><h3>Tu repertorio está vacío</h3><p>Agrega canciones una por una, o pega la lista de lo que se ha cantado en los últimos servicios: se crean las canciones y su historial de fechas en un solo paso.</p><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><button class="btn primary" type="button" data-act="import">Importar lista de servicios</button><button class="btn" type="button" data-act="newsong">Agregar una canción</button></div></div>`;
+    return;
+  }
+  const list = filteredSongs();
+  if (!list.length) { box.innerHTML = `<div class="empty"><h3>Ninguna canción coincide</h3><p>Prueba otra palabra o quita algún filtro.</p></div>`; return; }
+  box.innerHTML = `<div class="songs">${list.map(s => {
+    const l = lastSung(s.id), n = timesSung(s.id);
+    return `<button type="button" class="song" data-song="${esc(s.id)}">
+      ${keyBadge(s.key)}
+      <div class="t"><h3>${esc(s.title)}</h3><p>${esc(s.artist || "Artista sin registrar")}${s.timeSig ? " · " + esc(s.timeSig) : ""}</p>${(s.themes || []).length ? `<div class="tags">${s.themes.slice(0, 4).map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>` : ""}</div>
+      ${tempoEl(+s.bpm)}
+      <div class="last">${l ? `<b>${esc(agoText(daysSince(l)))}</b><span>${esc(fmtShort(l))} · ${n} ${n === 1 ? "vez" : "veces"}</span>` : `<b style="color:var(--muted)">Nunca registrada</b><span>sin fechas</span>`}</div>
+      <div class="stripbox">${weekStrip(s.id)}<div class="stripcap"><span>26 sem</span><span>hoy</span></div></div>
+    </button>`; }).join("")}</div>
+    <p class="status" style="margin-top:10px">${list.length} de ${S.songs.size} canciones. Las barras muestran las últimas 26 semanas: <span style="color:var(--sun)">●</span> domingo <span style="color:var(--wed)">●</span> miércoles <span style="color:var(--special)">●</span> especial.</p>`;
+}
+
+// ---------- render: servicios ----------
+function renderServices() {
+  const box = $("#svcList");
+  const le = loadingOrEmpty(); if (le) { box.innerHTML = le; return; }
+  let list = [...S.services].filter(s => !S.svcType || s.type === S.svcType).sort((a, b) => b.date.localeCompare(a.date));
+  if (!S.services.length) { box.innerHTML = `<div class="empty"><h3>Aún no hay servicios registrados</h3><p>Pega la lista de los últimos servicios con sus fechas y canciones, o registra el próximo domingo.</p><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><button class="btn primary" type="button" data-act="import">Importar lista</button><button class="btn" type="button" data-act="newsvc">Registrar un servicio</button></div></div>`; return; }
+  if (!list.length) { box.innerHTML = `<div class="empty"><p>No hay servicios de este tipo.</p></div>`; return; }
+  const groups = new Map();
+  for (const s of list) { const k = s.date.slice(0, 7); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(s); }
+  box.innerHTML = [...groups.entries()].map(([k, arr]) => `<div class="month"><h2>${esc(dOf(k + "-01").toLocaleDateString("es", { month: "long", year: "numeric" }))}</h2>${arr.map(svcCard).join("")}</div>`).join("");
+}
+function svcCard(s) {
+  const d = dOf(s.date);
+  return `<article class="svc">
+    <div class="date"><b>${d.getDate()}</b><span>${esc(d.toLocaleDateString("es", { weekday: "short" }))}</span></div>
+    <div style="min-width:0">
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="pill ${esc(s.type)}">${esc(TYPES[s.type] || s.type)}</span>${s.name ? `<h3>${esc(s.name)}</h3>` : ""}${s.date > TODAY ? `<span class="tag">Próximo</span>` : ""}</div>
+      <ol class="setlist">${(s.songIds || []).map(id => { const so = S.songs.get(id); return so ? `<li><button type="button" data-song="${esc(id)}">${esc(so.title)}</button>${so.key ? `<span class="mk">${esc(keyLabel(so.key))}</span>` : ""}</li>` : `<li><span style="color:var(--muted)">(canción eliminada)</span></li>`; }).join("") || `<li style="color:var(--muted)">Sin canciones</li>`}</ol>
+      ${s.notes ? `<p class="status" style="margin:8px 0 0">${esc(s.notes)}</p>` : ""}
+    </div>
+    <div class="actions"><button class="btn ghost sm" type="button" data-editsvc="${esc(s.id)}">Editar</button></div>
+  </article>`;
+}
+
+// ---------- render: descanso ----------
+function renderRest() {
+  const le = loadingOrEmpty();
+  if (le) { $("#restList").innerHTML = le; $("#hotList").innerHTML = ""; $("#restCount").textContent = ""; return; }
+  const wk = S.weeks;
+  const songs = [...S.songs.values()];
+  const rest = songs.map(s => ({ s, l: lastSung(s.id) })).filter(x => !x.l || daysSince(x.l) >= wk * 7)
+    .sort((a, b) => (a.l || "").localeCompare(b.l || "") || a.s.title.localeCompare(b.s.title, "es"));
+  $("#restCount").textContent = songs.length ? `${rest.length} de ${songs.length} canciones no se han cantado en ${wk} semanas o más.` : "";
+  const maxD = Math.max(1, ...rest.filter(x => x.l).map(x => daysSince(x.l)));
+  $("#restList").innerHTML = !songs.length ? `<div class="empty"><p>Cuando tengas canciones y servicios, aquí verás cuáles llevan más tiempo sin cantarse.</p><button class="btn primary" type="button" data-act="import">Importar lista</button></div>`
+    : !rest.length ? `<div class="empty"><p>Todas las canciones se han cantado en las últimas ${wk} semanas.</p></div>`
+    : rest.map(({ s, l }) => `<button type="button" class="rest" data-song="${esc(s.id)}">${keyBadge(s.key)}<div style="min-width:0"><h3>${esc(s.title)}</h3><p>${esc(s.artist || "")}${s.bpm ? " · " + esc(s.bpm) + " bpm" : ""}${(s.themes || []).length ? " · " + esc(s.themes.slice(0, 2).join(", ")) : ""}</p>${l ? `<div class="bar"><i style="width:${Math.round(daysSince(l) / maxD * 100)}%"></i></div>` : ""}</div><div class="ago">${l ? esc(agoText(daysSince(l))) : "nunca"}<small>${l ? esc(fmtShort(l)) : "sin registro"}</small></div></button>`).join("");
+  const since = isoOf(new Date(dOf(TODAY) - 91 * 864e5));
+  const hot = songs.map(s => ({ s, n: pastHist(s.id).filter(h => h.date >= since).length })).filter(x => x.n > 0).sort((a, b) => b.n - a.n).slice(0, 12);
+  $("#hotList").innerHTML = hot.length ? hot.map(({ s, n }) => `<div class="rank"><span><a href="#" data-song="${esc(s.id)}" style="color:var(--ink);text-decoration:none;font-weight:500">${esc(s.title)}</a></span><b>${n}×</b></div>`).join("") : `<p class="status">Sin servicios en los últimos 3 meses.</p>`;
+}
+
+function renderAll() {
+  renderSummary(); renderKeyOptions(); renderThemeChips(); renderSongs(); renderServices(); renderRest();
+}
+
+// ---------- modal ----------
+function openModal(html, onMount) {
+  const root = $("#modalRoot");
+  root.innerHTML = `<div class="overlay" data-close="1"><div class="panel" role="dialog" aria-modal="true">${html}</div></div>`;
+  const panel = $(".panel", root); onMount && onMount(panel);
+  const f = panel.querySelector("input,textarea,button"); f && f.focus();
+}
+const closeModal = () => { $("#modalRoot").innerHTML = ""; };
+document.addEventListener("keydown", e => { if (e.key === "Escape" && $("#modalRoot").innerHTML) closeModal(); });
+$("#modalRoot").addEventListener("click", e => { if (e.target.dataset.close) closeModal(); });
+
+// Song detail
+function openSong(id) {
+  const s = S.songs.get(id); if (!s) return;
+  const hist = stats.get(id) || [];
+  openModal(`
+    <div class="panelhead"><div><div class="eyebrow">${esc(s.artist || "Canción")}</div><h1 style="font-size:28px">${esc(s.title)}</h1></div><button class="icon" type="button" data-close="1" aria-label="Cerrar">✕</button></div>
+    <div class="meta">${keyBadge(s.key)}${tempoEl(+s.bpm)}${s.timeSig ? `<span class="tag">${esc(s.timeSig)}</span>` : ""}${(s.themes || []).map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+    ${s.link ? `<p style="margin:0 0 12px"><a href="${/^https?:\/\//i.test(s.link) ? esc(s.link) : "#"}" target="_blank" rel="noopener">Escuchar referencia ↗</a></p>` : ""}
+    ${s.notes ? `<div class="note" style="margin-bottom:14px"><b style="color:var(--ink)">Notas:</b> ${esc(s.notes)}</div>` : ""}
+    <h3 style="margin:18px 0 8px">Letra</h3>
+    ${s.lyrics ? `<pre class="lyrics">${esc(s.lyrics)}</pre>` : `<p class="status">Sin letra guardada. Edita la canción para agregarla.</p>`}
+    <h3 style="margin:22px 0 0">Historial · ${hist.length} ${hist.length === 1 ? "servicio" : "servicios"}</h3>
+    ${hist.length ? `<ul class="hist">${hist.map(h => `<li><span>${esc(fmtLong(h.date))}</span><span class="pill ${esc(h.type)}">${esc(h.name || TYPES[h.type] || "")}</span></li>`).join("")}</ul>` : `<p class="status">Todavía no está en ningún servicio.</p>`}
+    <div class="formactions" style="margin-top:22px"><button class="btn" type="button" id="mEdit">Editar canción</button><button class="btn primary" type="button" id="mAdd">Agregar a un servicio</button></div>`,
+  p => { $("#mEdit", p).onclick = () => editSong(id); $("#mAdd", p).onclick = () => editService(null, [id]); });
+}
+
+// Song editor
+function editSong(id, preset = {}) {
+  const s = id ? S.songs.get(id) : { title: "", ...preset };
+  openModal(`
+    <div class="panelhead"><h2>${id ? "Editar canción" : "Nueva canción"}</h2><button class="icon" type="button" data-close="1" aria-label="Cerrar">✕</button></div>
+    <form class="form" id="songForm">
+      <div class="field"><label for="sTitle">Título</label><input class="input" id="sTitle" required value="${esc(s.title)}"></div>
+      <div class="field"><label for="sArtist">Artista / autor</label><input class="input" id="sArtist" value="${esc(s.artist || "")}"></div>
+      <div class="grid3">
+        <div class="field"><label for="sKey">Tonalidad</label><select class="input" id="sKey"><option value="">—</option>${ALL_KEYS.map(k => `<option value="${k}" ${s.key === k ? "selected" : ""}>${esc(keyLabel(k))} · ${esc(solfa(k))}</option>`).join("")}</select></div>
+        <div class="field"><label for="sBpm">Tempo (bpm)</label><input class="input" id="sBpm" type="number" min="30" max="240" inputmode="numeric" value="${esc(s.bpm || "")}"></div>
+        <div class="field"><label for="sSig">Compás</label><select class="input" id="sSig">${["", "4/4", "3/4", "6/8", "2/4", "12/8"].map(v => `<option ${s.timeSig === v ? "selected" : ""} value="${v}">${v || "—"}</option>`).join("")}</select></div>
+      </div>
+      <div class="field"><label for="sThemes">Temas (separados por coma)</label><input class="input" id="sThemes" value="${esc((s.themes || []).join(", "))}" placeholder="gracia, cruz, fidelidad, adoración"></div>
+      <div class="field"><label for="sLyrics">Letra</label><textarea class="input" id="sLyrics" rows="12">${esc(s.lyrics || "")}</textarea></div>
+      <div class="field"><label for="sNotes">Notas (arreglo, quién la dirige, capo…)</label><textarea class="input" id="sNotes" rows="2">${esc(s.notes || "")}</textarea></div>
+      <div class="field"><label for="sLink">Enlace de referencia (YouTube, Spotify…)</label><input class="input" id="sLink" type="url" value="${esc(s.link || "")}" placeholder="https://"></div>
+      <div id="aiThemeBox"></div>
+      <div class="formactions">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">${id ? `<button class="btn danger" type="button" id="sDel">Eliminar</button>` : ""}<button class="btn ghost" type="button" id="sAi">Sugerir temas con IA</button></div>
+        <div style="display:flex;gap:8px"><button class="btn" type="button" data-close="1">Cancelar</button><button class="btn primary" type="submit">Guardar</button></div>
+      </div>
+    </form>`, p => {
+    $("#songForm", p).onsubmit = async e => {
+      e.preventDefault();
+      const title = $("#sTitle", p).value.trim(); if (!title) return;
+      const dup = [...S.songs.values()].find(x => x.id !== id && norm(x.title) === norm(title));
+      if (dup) { toast(`Ya existe “${dup.title}” en el repertorio.`); return; }
+      const data = { title, artist: $("#sArtist", p).value.trim(), key: $("#sKey", p).value, bpm: +$("#sBpm", p).value || null, timeSig: $("#sSig", p).value,
+        themes: $("#sThemes", p).value.split(",").map(t => t.trim()).filter(Boolean), lyrics: $("#sLyrics", p).value.replace(/\s+$/, ""), notes: $("#sNotes", p).value.trim(), link: $("#sLink", p).value.trim(),
+        createdAt: s.createdAt || new Date().toISOString(), updatedAt: new Date().toISOString() };
+      const sid = id || newId("s_");
+      try { await save("songs/" + sid, data); toast(id ? "Canción guardada" : "Canción agregada"); openSong(sid); } catch {}
+    };
+    $("#sAi", p).onclick = () => suggestThemes(p);
+    if (id) $("#sDel", p).onclick = () => {
+      const used = S.services.filter(sv => (sv.songIds || []).includes(id));
+      $("#aiThemeBox", p).innerHTML = `<div class="confirm">¿Eliminar “${esc(s.title)}”?${used.length ? ` Se quitará de ${used.length} servicio(s).` : ""}<span style="flex:1"></span><button class="btn sm" type="button" id="cNo">No</button><button class="btn sm danger" type="button" id="cYes" style="background:var(--danger);color:var(--surface)">Sí, eliminar</button></div>`;
+      $("#cNo", p).onclick = () => $("#aiThemeBox", p).innerHTML = "";
+      $("#cYes", p).onclick = async () => {
+        try {
+          for (const sv of used) { const { id: svid, ...rest } = sv; await save("services/" + svid, { ...rest, songIds: sv.songIds.filter(x => x !== id) }); }
+          await remove("songs/" + id); closeModal(); toast("Canción eliminada");
+        } catch {}
+      };
+    };
+  });
+}
+
+async function getSample() { if (S.sample === undefined) S.sample = await window.claude?.use?.("sample").catch(() => null) || null; return S.sample; }
+
+async function suggestThemes(p) {
+  const box = $("#aiThemeBox", p); const sample = await getSample();
+  if (!sample) { box.innerHTML = `<div class="note">${S.local ? "La IA solo está disponible en la versión de claude.ai." : "La IA no está disponible en esta vista."}</div>`; return; }
+  const title = $("#sTitle", p).value.trim(), lyrics = $("#sLyrics", p).value.trim();
+  if (!title && !lyrics) { box.innerHTML = `<div class="note">Escribe al menos el título o la letra.</div>`; return; }
+  box.innerHTML = `<div class="note" style="display:flex;gap:8px;align-items:center"><span class="spinner"></span> Leyendo la canción…</div>`;
+  try {
+    const r = await sample.json(`Eres asistente de un líder de alabanza de una iglesia cristiana hispana. Sugiere entre 3 y 6 temas cortos (1-3 palabras, en español, minúsculas) que describan de qué trata esta canción, útiles para buscarla después (ej: "gracia", "la cruz", "fidelidad de Dios", "espíritu santo", "adoración", "gozo", "entrega", "santa cena"). Si conoces la canción y no hay letra, básate en lo que sepas. Responde solo JSON: {"themes": ["..."]}.\n\nTítulo: ${title}\nArtista: ${$("#sArtist", p).value}\nLetra:\n${lyrics.slice(0, 3000)}`);
+    const th = Array.isArray(r?.themes) ? r.themes.filter(x => typeof x === "string").slice(0, 6) : [];
+    const cur = $("#sThemes", p).value.split(",").map(t => t.trim()).filter(Boolean);
+    const merged = [...cur]; for (const t of th) if (!merged.some(c => norm(c) === norm(t))) merged.push(t);
+    $("#sThemes", p).value = merged.join(", ");
+    box.innerHTML = `<div class="note">Temas agregados: ${esc(th.join(", ")) || "ninguno"}. Puedes editarlos antes de guardar.</div>`;
+  } catch (e) { box.innerHTML = `<div class="note">${e?.code === "not_granted" ? "No se dio permiso para usar la IA." : e?.code === "rate_limited" ? "Demasiadas solicitudes; espera un momento." : "No se pudieron sugerir temas."}</div>`; }
+}
+
+// Service editor
+function editService(id, presetSongs = [], presetType) {
+  const sv = id ? S.services.find(x => x.id === id) : null;
+  const st = { date: sv?.date || nextServiceDate(presetType), type: sv?.type || presetType || "", name: sv?.name || "", notes: sv?.notes || "", songIds: [...(sv?.songIds || presetSongs)] };
+  if (!st.type) st.type = typeForDate(st.date);
+  openModal(`
+    <div class="panelhead"><h2>${id ? "Editar servicio" : "Nuevo servicio"}</h2><button class="icon" type="button" data-close="1" aria-label="Cerrar">✕</button></div>
+    <form class="form" id="svcForm">
+      <div class="grid2">
+        <div class="field"><label for="vDate">Fecha</label><input class="input" id="vDate" type="date" required value="${esc(st.date)}"></div>
+        <div class="field"><label for="vType">Tipo</label><select class="input" id="vType">${Object.entries(TYPES).map(([k, v]) => `<option value="${k}" ${st.type === k ? "selected" : ""}>${v}</option>`).join("")}</select></div>
+      </div>
+      <div class="field" id="vNameBox"><label for="vName">Nombre del evento (opcional)</label><input class="input" id="vName" value="${esc(st.name)}" placeholder="Ej. Santa Cena, Vigilia, Aniversario"></div>
+      <div class="field"><label>Canciones, en orden</label><ul class="chosen" id="vChosen"></ul></div>
+      <div class="field"><label for="vSearch">Agregar canción</label><input class="input" id="vSearch" placeholder="Busca en el repertorio o escribe un título nuevo" autocomplete="off"><div class="picker" id="vPick" hidden></div></div>
+      <div class="field"><label for="vNotes">Notas</label><textarea class="input" id="vNotes" rows="2" placeholder="Ej. dirigió Ana; prédica sobre Juan 15">${esc(st.notes)}</textarea></div>
+      <div id="vConfirm"></div>
+      <div class="formactions">
+        <div>${id ? `<button class="btn danger" type="button" id="vDel">Eliminar servicio</button>` : ""}</div>
+        <div style="display:flex;gap:8px"><button class="btn" type="button" data-close="1">Cancelar</button><button class="btn primary" type="submit">Guardar</button></div>
+      </div>
+    </form>`, p => {
+    const drawChosen = () => {
+      $("#vChosen", p).innerHTML = st.songIds.length ? st.songIds.map((sid, i) => { const so = S.songs.get(sid); return `<li><span class="num">${i + 1}</span><span class="nm">${esc(so?.title || "(eliminada)")}</span>${so?.key ? `<span class="mk">${esc(keyLabel(so.key))}</span>` : ""}<button class="icon" type="button" data-up="${i}" aria-label="Subir" ${i ? "" : "disabled"}>↑</button><button class="icon" type="button" data-down="${i}" aria-label="Bajar" ${i < st.songIds.length - 1 ? "" : "disabled"}>↓</button><button class="icon" type="button" data-rm="${i}" aria-label="Quitar">✕</button></li>`; }).join("") : `<li style="color:var(--muted);justify-content:center">Busca canciones abajo para armar la lista.</li>`;
+    };
+    drawChosen();
+    $("#vChosen", p).onclick = e => {
+      const b = e.target.closest("button"); if (!b) return; const a = st.songIds;
+      if (b.dataset.up) { const i = +b.dataset.up; [a[i - 1], a[i]] = [a[i], a[i - 1]]; }
+      if (b.dataset.down) { const i = +b.dataset.down; [a[i + 1], a[i]] = [a[i], a[i + 1]]; }
+      if (b.dataset.rm) a.splice(+b.dataset.rm, 1);
+      drawChosen();
+    };
+    $("#vDate", p).onchange = e => { if (!id && e.target.value) $("#vType", p).value = typeForDate(e.target.value); };
+    const pick = $("#vPick", p), search = $("#vSearch", p);
+    const drawPick = () => {
+      const q = norm(search.value);
+      if (!q) { pick.hidden = true; return; }
+      const res = [...S.songs.values()].filter(s => !st.songIds.includes(s.id) && norm(s.title + " " + (s.artist || "")).includes(q)).slice(0, 8);
+      const exact = [...S.songs.values()].some(s => norm(s.title) === q);
+      pick.innerHTML = res.map(s => { const l = lastSung(s.id); return `<button type="button" data-pick="${esc(s.id)}"><b style="font-weight:500">${esc(s.title)}</b><span>${s.key ? esc(keyLabel(s.key)) + " · " : ""}${l ? esc(agoText(daysSince(l))) : "nunca"}</span></button>`; }).join("")
+        + (exact ? "" : `<button type="button" data-create="1"><b style="font-weight:500">+ Crear “${esc(search.value.trim())}”</b><span>nueva canción</span></button>`);
+      pick.hidden = false;
+    };
+    search.oninput = drawPick;
+    search.onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); const f = pick.querySelector("button"); f && f.click(); } };
+    pick.onclick = async e => {
+      const b = e.target.closest("button"); if (!b) return;
+      if (b.dataset.pick) st.songIds.push(b.dataset.pick);
+      if (b.dataset.create) {
+        const title = search.value.trim(); const sid = newId("s_");
+        try { await save("songs/" + sid, { title, artist: "", key: "", bpm: null, timeSig: "", themes: [], lyrics: "", notes: "", link: "", createdAt: new Date().toISOString() }); S.songs.set(sid, { id: sid, title }); st.songIds.push(sid); } catch { return; }
+      }
+      search.value = ""; pick.hidden = true; drawChosen(); search.focus();
+    };
+    $("#svcForm", p).onsubmit = async e => {
+      e.preventDefault();
+      const data = { date: $("#vDate", p).value, type: $("#vType", p).value, name: $("#vName", p).value.trim(), notes: $("#vNotes", p).value.trim(), songIds: st.songIds, updatedAt: new Date().toISOString() };
+      if (!data.date) return;
+      try { await save("services/" + (id || newId("v_")), data); closeModal(); toast("Servicio guardado"); location.hash = "#servicios"; } catch {}
+    };
+    if (id) $("#vDel", p).onclick = () => {
+      $("#vConfirm", p).innerHTML = `<div class="confirm">¿Eliminar este servicio? Las canciones se quedan en el repertorio.<span style="flex:1"></span><button class="btn sm" type="button" id="cNo">No</button><button class="btn sm danger" type="button" id="cYes" style="background:var(--danger);color:var(--surface)">Sí, eliminar</button></div>`;
+      $("#cNo", p).onclick = () => $("#vConfirm", p).innerHTML = "";
+      $("#cYes", p).onclick = async () => { try { await remove("services/" + id); closeModal(); toast("Servicio eliminado"); } catch {} };
+    };
+  });
+}
+function nextServiceDate(type) {
+  const d = dOf(TODAY); const want = type === "miercoles" ? [3] : type === "domingo" ? [0] : [0, 3];
+  for (let i = 0; i < 8; i++) { if (want.includes(d.getDay())) return isoOf(d); d.setDate(d.getDate() + 1); }
+  return TODAY;
+}
+
+// ---------- import ----------
+const MONTHS = { ene: 1, feb: 2, mar: 3, abr: 4, may: 5, jun: 6, jul: 7, ago: 8, sep: 9, set: 9, oct: 10, nov: 11, dic: 12 };
+function findDate(line) {
+  const l = norm(line); const y0 = +TODAY.slice(0, 4);
+  let m = /(\d{4})-(\d{1,2})-(\d{1,2})/.exec(line); if (m) return isoOf(new Date(+m[1], +m[2] - 1, +m[3]));
+  m = /\b(\d{1,2})[\/.\-](\d{1,2})(?:[\/.\-](\d{2,4}))?\b/.exec(line);
+  if (m) { let y = m[3] ? +m[3] : y0; if (y < 100) y += 2000; let dt = new Date(y, +m[2] - 1, +m[1]); if (!m[3] && isoOf(dt) > TODAY) dt = new Date(y - 1, +m[2] - 1, +m[1]); return isoOf(dt); }
+  m = /\b(\d{1,2})\s+(?:de\s+)?([a-z]{3})[a-z]*(?:\s+(?:de\s+|del\s+)?(\d{4}))?/.exec(l);
+  if (m && MONTHS[m[2]]) { let dt = new Date(m[3] ? +m[3] : y0, MONTHS[m[2]] - 1, +m[1]); if (!m[3] && isoOf(dt) > TODAY) dt.setFullYear(dt.getFullYear() - 1); return isoOf(dt); }
+  return null;
+}
+function parseImport(text) {
+  const out = []; let cur = null;
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.trim(); if (!line) continue;
+    const date = findDate(line);
+    if (date && line.length < 90) {
+      const l = norm(line);
+      let type = /miercoles/.test(l) ? "miercoles" : /domingo/.test(l) ? "domingo" : typeForDate(date);
+      let name = "";
+      if (/especial|evento|vigilia|navidad|conferencia|retiro|bautizo|bautismo|santa cena|aniversario|congreso|culto de|ayuno|pascua|resurreccion/.test(l)) {
+        if (type === "especial" || /especial|evento|vigilia|conferencia|retiro|congreso|aniversario/.test(l)) type = "especial";
+        name = line.replace(/(\d{4}-\d{1,2}-\d{1,2})|(\d{1,2}[\/.\-]\d{1,2}([\/.\-]\d{2,4})?)|(\b\d{1,2}\s+(de\s+)?[A-Za-zé]+(\s+(de\s+)?\d{4})?)/g, "").replace(/\b(domingo|mi[eé]rcoles|evento especial|especial|servicio|culto)\b/gi, "").replace(/[:\-–—,()]+/g, " ").replace(/\s+/g, " ").trim();
+      }
+      cur = { date, type, name, songs: [] }; out.push(cur); continue;
+    }
+    if (!cur) continue;
+    let t = line.replace(/^(\d+[\.\)\-]\s*|[-•*·–]\s*)/, "");
+    let key = "", bpm = null, artist = "";
+    t = t.replace(/[\(\[]([^\)\]]*)[\)\]]/g, (_, inner) => {
+      let used = false;
+      for (const tok of inner.split(/[,;\/\s]+/)) { const k = parseKey(tok); if (k && !key) { key = k; used = true; continue; } const b = /^(\d{2,3})(bpm)?$/i.exec(tok); if (b && !bpm) { bpm = +b[1]; used = true; } }
+      return used ? "" : `(${inner})`;
+    }).trim();
+    const parts = t.split(/\s+[-–—|]\s+/);
+    const title = parts.shift().trim();
+    for (const part of parts) {
+      const k = parseKey(part.replace(/^(tono|tonalidad|key)\s*:?\s*/i, ""));
+      if (k && !key) { key = k; continue; }
+      const b = /^(\d{2,3})\s*(bpm)?$/i.exec(part.trim()); if (b && !bpm) { bpm = +b[1]; continue; }
+      if (!artist) artist = part.trim();
+    }
+    if (title) cur.songs.push({ title, key, bpm, artist });
+  }
+  return out.filter(s => s.songs.length);
+}
+function openImport() {
+  openModal(`
+    <div class="panelhead"><div><div class="eyebrow">Importar</div><h2>Pegar lista de servicios</h2></div><button class="icon" type="button" data-close="1" aria-label="Cerrar">✕</button></div>
+    <p class="lede" style="margin:0 0 12px">Escribe una línea con la fecha y debajo las canciones. Si la línea dice “miércoles”, “domingo” o el nombre del evento, se usa; si no, se deduce por el día. Puedes añadir tono y tempo entre paréntesis o después de un guion.</p>
+    <div class="field"><label for="imText">Lista</label><textarea class="input" id="imText" rows="12" style="font-family:var(--mono);font-size:13px" placeholder="Domingo 15/11/2026
+1. Cuán grande es Él (G, 70)
+2. Way Maker - Sinach - E
+3. Sublime gracia
+
+Miércoles 11/11
+- Te doy gloria (A)
+- Digno es el Señor
+
+Vigilia 31/10/2026
+- Espíritu Santo - D - 68"></textarea></div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:10px"><button class="btn" type="button" id="imPrev">Revisar</button></div>
+    <div id="imOut" style="margin-top:16px"></div>`, p => {
+    let parsed = [];
+    $("#imPrev", p).onclick = () => {
+      parsed = parseImport($("#imText", p).value);
+      const out = $("#imOut", p);
+      if (!parsed.length) { out.innerHTML = `<div class="note">No encontré fechas con canciones. Cada bloque necesita una línea con la fecha (por ejemplo “Domingo 15/11/2026”) y las canciones debajo.</div>`; return; }
+      const byNorm = new Map([...S.songs.values()].map(s => [norm(s.title), s]));
+      const newTitles = new Set(); parsed.forEach(sv => sv.songs.forEach(s => { if (!byNorm.has(norm(s.title))) newTitles.add(norm(s.title)); }));
+      out.innerHTML = `<div class="preview">${parsed.map(sv => {
+        const ex = S.services.find(x => x.date === sv.date && x.type === sv.type);
+        return `<div class="pv"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><b>${esc(fmtLong(sv.date))}</b><span class="pill ${sv.type}">${esc(sv.name || TYPES[sv.type])}</span>${ex ? `<span class="tag">reemplaza el registrado</span>` : ""}</div>
+        <ol class="setlist">${sv.songs.map(s => `<li><span>${esc(s.title)}</span>${s.key ? `<span class="mk">${esc(keyLabel(s.key))}</span>` : ""}${s.bpm ? `<span class="mk">${s.bpm}</span>` : ""}${!byNorm.has(norm(s.title)) ? `<span class="new">nueva</span>` : ""}</li>`).join("")}</ol></div>`; }).join("")}</div>
+        <div class="formactions"><span class="status">${parsed.length} servicio(s) · ${newTitles.size} canción(es) nueva(s)</span><button class="btn primary" type="button" id="imSave">Guardar todo</button></div>`;
+      $("#imSave", p).onclick = async e => {
+        e.target.disabled = true; e.target.innerHTML = `<span class="spinner"></span> Guardando…`;
+        try {
+          const map = new Map([...S.songs.values()].map(s => [norm(s.title), s.id]));
+          for (const sv of parsed) {
+            const ids = [];
+            for (const s of sv.songs) {
+              const n = norm(s.title); let sid = map.get(n);
+              if (!sid) { sid = newId("s_"); await save("songs/" + sid, { title: s.title, artist: s.artist, key: s.key, bpm: s.bpm, timeSig: "", themes: [], lyrics: "", notes: "", link: "", createdAt: new Date().toISOString() }); map.set(n, sid); }
+              else { const ex = S.songs.get(sid); if (ex && ((s.key && !ex.key) || (s.bpm && !ex.bpm) || (s.artist && !ex.artist))) { const { id: _, ...rest } = ex; await save("songs/" + sid, { ...rest, key: ex.key || s.key, bpm: ex.bpm || s.bpm, artist: ex.artist || s.artist }); } }
+              if (!ids.includes(sid)) ids.push(sid);
+            }
+            const ex = S.services.find(x => x.date === sv.date && x.type === sv.type);
+            await save("services/" + (ex?.id || newId("v_")), { date: sv.date, type: sv.type, name: sv.name || ex?.name || "", notes: ex?.notes || "", songIds: ids, updatedAt: new Date().toISOString() });
+          }
+          closeModal(); toast("Lista importada"); location.hash = "#servicios";
+        } catch { e.target.disabled = false; e.target.textContent = "Guardar todo"; }
+      };
+    };
+  });
+}
+
+// ---------- recommend ----------
+const IDEAS = ["Gratitud por la fidelidad de Dios", "La cruz y la Santa Cena", "Esperanza en tiempos difíciles", "Celebración y gozo", "Llenura del Espíritu Santo", "Entrega y rendición", "Navidad: Dios con nosotros"];
+$("#askIdeas").innerHTML = IDEAS.map(i => `<button type="button" class="chip" data-idea="${esc(i)}">${esc(i)}</button>`).join("");
+$("#askIdeas").onclick = e => { const b = e.target.closest("[data-idea]"); if (b) { $("#askText").value = b.dataset.idea; $("#askText").focus(); } };
+
+function localRecommend(topic, n, fresh) {
+  const words = norm(topic).split(" ").filter(w => w.length > 3);
+  return [...S.songs.values()].map(s => {
+    const hay = norm([s.title, (s.themes || []).join(" "), s.lyrics].join(" "));
+    let score = words.reduce((a, w) => a + (hay.includes(w) ? ((s.themes || []).some(t => norm(t).includes(w)) ? 3 : 1) : 0), 0);
+    const l = lastSung(s.id); if (fresh) score += l ? Math.min(daysSince(l) / 60, 2) : 1.5;
+    return { s, score };
+  }).filter(x => x.score > 0).sort((a, b) => b.score - a.score).slice(0, n)
+    .sort((a, b) => (+b.s.bpm || 90) - (+a.s.bpm || 90))
+    .map(x => ({ id: x.s.id, razon: words.length ? "Coincide con palabras de tu tema en el título, los temas o la letra." : "No se ha cantado en un tiempo.", momento: "" }));
+}
+
+$("#askForm").onsubmit = async e => {
+  e.preventDefault();
+  const topic = $("#askText").value.trim(), n = +$("#askN").value, type = $("#askType").value, fresh = $("#askFresh").checked;
+  const out = $("#recOut");
+  if (!topic) { $("#askText").focus(); return; }
+  if (!S.songs.size) { out.innerHTML = `<div class="empty" style="margin-top:20px"><p>Primero agrega canciones al repertorio.</p><button class="btn primary" type="button" data-act="import">Importar lista</button></div>`; return; }
+  const btn = $("#askBtn"); btn.disabled = true; btn.innerHTML = `<span class="spinner"></span> Pensando…`;
+  out.innerHTML = `<div class="note" style="margin-top:20px">Revisando ${S.songs.size} canciones…</div>`;
+  let result = null, mode = "ai";
+  const sample = await getSample();
+  if (sample) {
+    const catalog = [...S.songs.values()].map(s => {
+      const l = lastSung(s.id);
+      return { id: s.id, titulo: s.title, artista: s.artist || undefined, tono: s.key || undefined, bpm: s.bpm || undefined, temas: (s.themes || []).length ? s.themes : undefined,
+        ultima_vez: l ? `${l} (${agoText(daysSince(l))})` : "nunca registrada", veces: timesSung(s.id), letra: s.lyrics ? s.lyrics.replace(/\s+/g, " ").slice(0, 220) : undefined };
+    });
+    const prompt = `Eres un asistente para un líder de alabanza de una iglesia cristiana hispana. Hoy es ${TODAY}.
+El líder quiere armar la lista de canciones para un servicio de tipo "${TYPES[type]}" con ${n} canciones.
+Tema o enfoque que pidió: """${topic}"""
+${fresh ? "Da preferencia a canciones que no se han cantado en las últimas semanas, sin sacrificar que encajen con el tema." : "No importa si se cantaron recientemente."}
+
+Reglas:
+- Solo puedes elegir canciones del catálogo, usando su "id" exacto. No inventes canciones.
+- Usa la letra, los temas y lo que sepas de cada canción para juzgar si encaja con el tema.
+- Ordénalas como fluiría el servicio (por ejemplo: apertura/celebración más rápida, luego adoración e intimidad, y cierre/respuesta), considerando tempo y tonalidad para transiciones suaves.
+- La "razon" debe ser concreta (1-2 frases en español) y mencionar por qué encaja con el tema; si aplica, menciona cuánto tiempo lleva sin cantarse.
+- "flujo": 2-3 frases sobre el orden y las transiciones de tono/tempo.
+- Si hay pocas canciones que encajen, devuelve menos y dilo en "flujo".
+
+Responde SOLO JSON con esta forma:
+{"canciones":[{"id":"...","momento":"apertura|celebración|adoración|ministración|respuesta|cierre","razon":"..."}],"flujo":"..."}
+
+Catálogo (JSON):
+${JSON.stringify(catalog)}`;
+    try { result = await sample.json(prompt, { modelTier: "default" }); }
+    catch (err) { mode = "local"; if (err?.code === "not_granted") out.innerHTML = ""; }
+  } else mode = "local";
+  let recs = [], flow = "";
+  if (mode === "ai" && result && Array.isArray(result.canciones)) {
+    recs = result.canciones.filter(r => r && S.songs.has(r.id)).slice(0, n); flow = typeof result.flujo === "string" ? result.flujo : "";
+    if (!recs.length) mode = "local";
+  } else mode = "local";
+  if (mode === "local") recs = localRecommend(topic, n, fresh);
+  S.recs = { recs, type };
+  btn.disabled = false; btn.textContent = "Recomendar";
+  if (!recs.length) { out.innerHTML = `<div class="empty" style="margin-top:20px"><h3>No encontré canciones para ese tema</h3><p>Agrega temas o letras a tus canciones para que la búsqueda tenga más con qué trabajar.</p></div>`; return; }
+  out.innerHTML = `<div class="recs">
+    ${mode === "local" ? `<div class="note">${S.local ? "En esta versión no hay IA" : "La IA no está disponible en esta vista"}, así que estas sugerencias salen de buscar tus palabras en títulos, temas y letras.</div>` : ""}
+    ${flow ? `<p class="flow">${esc(flow)}</p>` : ""}
+    ${recs.map((r, i) => { const s = S.songs.get(r.id); const l = lastSung(s.id); return `<div class="rec"><span class="n">${i + 1}</span>${keyBadge(s.key)}<div style="min-width:0">${r.momento ? `<div class="moment">${esc(r.momento)}</div>` : ""}<h3><a href="#" data-song="${esc(s.id)}" style="color:var(--ink);text-decoration:none">${esc(s.title)}</a></h3><p>${esc(r.razon || "")}</p><p style="font-size:12.5px">${l ? "Última vez " + esc(agoText(daysSince(l))) + " · " + esc(fmtShort(l)) : "Nunca registrada en un servicio"}</p></div>${tempoEl(+s.bpm)}</div>`; }).join("")}
+    <div class="formactions"><button class="btn ghost" type="button" id="recAgain">Pedir otras opciones</button><button class="btn primary" type="button" id="recUse">Crear servicio con esta lista</button></div>
+  </div>`;
+  $("#recUse").onclick = () => editService(null, S.recs.recs.map(r => r.id), S.recs.type);
+  $("#recAgain").onclick = () => { $("#askText").value = topic + " (dame opciones distintas a: " + recs.map(r => S.songs.get(r.id).title).join(", ") + ")"; $("#askForm").requestSubmit(); };
+};
+
+// ---------- events ----------
+$("#q").addEventListener("input", e => { S.f.q = e.target.value; renderSongs(); });
+$("#fKey").addEventListener("change", e => { S.f.key = e.target.value; renderSongs(); });
+$("#fTempo").addEventListener("change", e => { S.f.tempo = e.target.value; renderSongs(); });
+$("#fSort").addEventListener("change", e => { S.f.sort = e.target.value; renderSongs(); });
+$("#themeChips").addEventListener("click", e => { const b = e.target.closest("[data-theme]"); if (!b) return; const t = b.dataset.theme; S.f.themes.has(t) ? S.f.themes.delete(t) : S.f.themes.add(t); renderThemeChips(); renderSongs(); });
+$("#svcFilter").addEventListener("click", e => { const b = e.target.closest("[data-t]"); if (!b) return; S.svcType = b.dataset.t; document.querySelectorAll("#svcFilter .chip").forEach(c => c.setAttribute("aria-pressed", c === b)); renderServices(); });
+$("#weeks").addEventListener("input", e => { S.weeks = +e.target.value; $("#weeksOut").textContent = `${S.weeks} semanas`; renderRest(); });
+$("#btnNewSong").onclick = () => editSong(null);
+$("#btnNewSvc").onclick = () => editService(null);
+$("#btnImport").onclick = openImport;
+$("#btnImport2").onclick = openImport;
+document.addEventListener("click", e => {
+  const s = e.target.closest("[data-song]"); if (s && !e.target.closest(".panel form")) { e.preventDefault(); openSong(s.dataset.song); return; }
+  const v = e.target.closest("[data-editsvc]"); if (v) { editService(v.dataset.editsvc); return; }
+  const a = e.target.closest("[data-act]");
+  if (a) { const k = a.dataset.act; if (k === "import") openImport(); if (k === "newsong") editSong(null); if (k === "newsvc") editService(null); }
+});
+
+route(); renderAll(); boot();
+})();
+</script>
+
+</body>
+</html>

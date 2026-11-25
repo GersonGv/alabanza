@@ -1,0 +1,314 @@
+{
+  "app": "repertorio-alabanza",
+  "exportedAt": "2026-11-25T00:00:00.000Z",
+  "songs": {
+    "s_cristo-nuestra-gloria": {
+      "artist": "Gracia Soberana Música feat. Jonathan & Sarah Jerez (David Zimmer, Nathan Stiff)",
+      "bpm": 144,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "Bb",
+      "link": "https://sovereigngracemusic.com/wp-content/uploads/Cristo-Nuestra-Gloria-Acordes.pdf",
+      "lyrics": "",
+      "notes": "Versión en español de \"Christ Our Glory\", álbum En Ti Esperamos (2022). Tono Si♭ y 144 bpm según la hoja de acordes oficial; la grabación tiene cambios de tempo.",
+      "themes": [
+        "gloria de Cristo",
+        "Cristo suficiente",
+        "esperanza eterna",
+        "celebración"
+      ],
+      "timeSig": "4/4",
+      "title": "Cristo nuestra gloria"
+    },
+    "s_cuan-firme-cimiento": {
+      "artist": "Gracia Soberana Música (himno tradicional)",
+      "bpm": 76,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "G",
+      "link": "https://graciasoberanamusica.com/wp-content/uploads/Cuan-Firme-Cimiento_ACORDES_G_BE_03312025.docx.pdf",
+      "lyrics": "",
+      "notes": "Himno \"How Firm a Foundation\" (dominio público), álbum Himnos (2025). Tono Sol y 76 bpm, confirmados por la hoja de acordes oficial de Gracia Soberana.",
+      "themes": [
+        "Palabra de Dios",
+        "promesas de Dios",
+        "fidelidad de Dios",
+        "consuelo en la prueba"
+      ],
+      "timeSig": "4/4",
+      "title": "Cuán firme cimiento"
+    },
+    "s_el-digno-dios": {
+      "artist": "Alfarero",
+      "bpm": 72,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "G",
+      "link": "https://songbpm.com/@alfarero/el-digno-dios",
+      "lyrics": "",
+      "notes": "Tono Sol. La secuencia oficial usa click de 71.5 bpm (otras fuentes dicen 142, el doble). La versión original dura 7:30; la acústica 4:54. Acordes base: Em, G, D, C.",
+      "themes": [
+        "dignidad de Dios",
+        "adoración",
+        "alabanza",
+        "exaltación"
+      ],
+      "timeSig": "4/4",
+      "title": "El digno Dios"
+    },
+    "s_empieza-en-mi": {
+      "artist": "Jonathan & Sarah Jerez",
+      "bpm": 75,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "Db",
+      "link": "https://open.spotify.com/track/3BgajkzHd6JzFFBkK42aNz",
+      "lyrics": "",
+      "notes": "Sencillo de 2023. Tono original Re♭ (algunos acordes la escriben en Si♭ menor con capo 1). El tempo de 75 es la referencia de Multitracks; otras fuentes dicen 150 (doble tiempo). La grabación tiene cambios de tempo. Inspirada en el Padre Nuestro: buena para la respuesta o el cierre.",
+      "themes": [
+        "venga tu reino",
+        "Padre Nuestro",
+        "oración",
+        "entrega",
+        "avivamiento"
+      ],
+      "timeSig": "4/4",
+      "title": "Empieza en mí"
+    },
+    "s_gloria-al-senor-poderoso": {
+      "artist": "Gracia Soberana Música (himno de Joachim Neander)",
+      "bpm": 69,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "E",
+      "link": "https://graciasoberanamusica.com/musica/canciones/gloria-al-senor-poderoso/",
+      "lyrics": "",
+      "notes": "Versión en español del himno \"Praise to the Lord, the Almighty\" (dominio público), álbum Himnos (2025), voz principal Sarah Jerez. Tono Mi. El 69 cuenta la negra con puntillo en 6/8 (138 en corcheas). Ideal para abrir.",
+      "themes": [
+        "alabanza",
+        "Dios creador",
+        "soberanía de Dios",
+        "providencia"
+      ],
+      "timeSig": "6/8",
+      "title": "Gloria al Señor, poderoso"
+    },
+    "s_gracia-mas-grande": {
+      "artist": "Jonathan & Sarah Jerez",
+      "bpm": 73,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "F",
+      "link": "https://songbpm.com/@jonathan-sarah-jerez/gracia-mas-grande",
+      "lyrics": "",
+      "notes": "Álbum Periscopio (2017), 5:13. Tono original Fa, 73 bpm (o 146 a doble tiempo). Acordes base: F, B♭, Dm, C.",
+      "themes": [
+        "gracia",
+        "perdón",
+        "pecado y redención"
+      ],
+      "timeSig": "4/4",
+      "title": "Gracia más grande"
+    },
+    "s_jesucristo-basta": {
+      "artist": "Un Corazón",
+      "bpm": 69,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "Ab",
+      "link": "https://songbpm.com/@un-corazon/jesucristo-basta",
+      "lyrics": "",
+      "notes": "Álbum Somos Iglesia (2017). Tono original La♭ (Cifra Club la escribe en Sol con capo 1). Tempo 69, o 138 a doble tiempo. Acordes base: A♭, E♭, Fm7, D♭.",
+      "themes": [
+        "suficiencia de Cristo",
+        "satisfacción en Cristo",
+        "entrega",
+        "adoración"
+      ],
+      "timeSig": "4/4",
+      "title": "Jesucristo basta"
+    },
+    "s_la-salvacion-es-del-senor": {
+      "artist": "Adoración La IBI",
+      "bpm": 64,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "E",
+      "link": "https://chords.lacuerda.net/ibi/la_salvacion_es_del_senor.shtml",
+      "lyrics": "",
+      "notes": "Canción título del álbum La Salvación es del Señor (en Multitracks aparece como \"La salvación del Señor\"). Tono Mi, 64 bpm (128 a doble tiempo), 6:11.",
+      "themes": [
+        "salvación",
+        "gracia",
+        "obra de Dios",
+        "Jonás 2:9"
+      ],
+      "timeSig": "4/4",
+      "title": "La salvación es del Señor"
+    },
+    "s_mi-alma-esperara": {
+      "artist": "Gracia Soberana Música feat. Jonathan & Sarah Jerez (Keaton Bunting, Bob Kauflin)",
+      "bpm": 81,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "G",
+      "link": "https://chords.lacuerda.net/sovereign_grace_music/mi_alma_esperara",
+      "lyrics": "",
+      "notes": "Álbum En Ti Esperamos. Tono Sol (también hay pistas en Sol♭ y La♭). 81 bpm contando la negra con puntillo (162 en corcheas); la grabación tiene cambios de tempo.",
+      "themes": [
+        "esperar en Dios",
+        "esperanza",
+        "confianza en la prueba",
+        "paciencia"
+      ],
+      "timeSig": "6/8",
+      "title": "Mi alma esperará"
+    },
+    "s_mi-esperanza-esta-en-jesus": {
+      "artist": "Jonathan & Sarah Jerez",
+      "bpm": 120,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "F",
+      "link": "https://songbpm.com/@jonathan-sarah-jerez/mi-esperanza-esta-en-jesus",
+      "lyrics": "",
+      "notes": "Álbum Periscopio. Tono original Fa, 120 bpm (4:04). Ultimate Guitar la escribe con capo 1. Ojo: Bethel tiene otra canción con el mismo título (en La); no es esta.",
+      "themes": [
+        "esperanza",
+        "confianza en Cristo",
+        "fe",
+        "seguridad en Cristo"
+      ],
+      "timeSig": "4/4",
+      "title": "Mi esperanza está en Jesús"
+    },
+    "s_nada-en-la-tierra": {
+      "artist": "Adoración La IBI",
+      "bpm": 138,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "D",
+      "link": "https://acordesweb.com/cancion/la-ibi/nada-en-la-tierra",
+      "lyrics": "",
+      "notes": "Álbum La Salvación es del Señor. Tono Re, 138 bpm (5:06); pistas también en Re♭ y Mi♭. El título evoca el Salmo 73:25.",
+      "themes": [
+        "Dios mi porción",
+        "satisfacción en Dios",
+        "Salmo 73",
+        "adoración"
+      ],
+      "timeSig": "4/4",
+      "title": "Nada en la tierra"
+    },
+    "s_nombre-sobre-todo": {
+      "artist": "Adoración La IBI & Sovereign Grace Music",
+      "bpm": 132,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "D",
+      "link": "https://tabs.ultimate-guitar.com/tab/la-ibi/nombre-sobre-todo-chords-3623486",
+      "lyrics": "",
+      "notes": "Tono Re, unos 130–132 bpm según transcripciones (no hay hoja oficial). Acordes base: D, G, A, Bm. No confundir con \"Nombre sobre todo nombre\" de Hakuna, que es otra canción.",
+      "themes": [
+        "nombre de Jesús",
+        "exaltación de Cristo",
+        "señorío de Cristo",
+        "adoración"
+      ],
+      "timeSig": "4/4",
+      "title": "Nombre sobre todo"
+    },
+    "s_por-todo-el-mundo": {
+      "artist": "Conferencia Expositores",
+      "bpm": null,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "",
+      "link": "https://open.spotify.com/track/3Qe4rkrlvAPbZTU6b8mVBo",
+      "lyrics": "",
+      "notes": "Álbum Himnos de Gracia – Conferencia Expositores 2020 (2:59). Tonalidad SIN CONFIRMAR: las transcripciones dicen Re (Chordify) o Sol (Ultimate Guitar). Anota aquí el tono y tempo en que la canta el equipo. Temas deducidos del título; corrígelos si no corresponden.",
+      "themes": [
+        "misiones",
+        "las naciones",
+        "evangelio"
+      ],
+      "timeSig": "",
+      "title": "Por todo el mundo"
+    },
+    "s_todo-lo-que-creo-el-rey": {
+      "artist": "Gracia Soberana Música (arreglo de Jonathan y Ryan Baird)",
+      "bpm": 75,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "C",
+      "link": "https://sovereigngracemusic.s3.amazonaws.com/wp-content/uploads/20250203134004/Todo-lo-que-Creo-el-Rey_AC-ORDES_C-D_BE_02012025.pdf",
+      "lyrics": "",
+      "notes": "Versión en español del himno \"All Creatures of Our God and King\", álbum Himnos (2025). Tono Do y 75 bpm según la hoja de acordes oficial (también existe en Re). Buena para abrir.",
+      "themes": [
+        "alabanza",
+        "creación",
+        "Dios creador",
+        "toda la creación adora"
+      ],
+      "timeSig": "4/4",
+      "title": "Todo lo que creó el Rey"
+    },
+    "s_venid-glorificad-a-dios": {
+      "artist": "Gracia Soberana Música (Bob Kauflin, Tim Chester)",
+      "bpm": 63,
+      "createdAt": "2026-11-18T12:00:00.000Z",
+      "key": "Bb",
+      "link": "https://www.praisecharts.com/songs/details/25757/venid-glorificad-a-dios-come-praise-and-glorify-chords",
+      "lyrics": "",
+      "notes": "Versión en español de \"Come Praise and Glorify\" (Sovereign Grace), álbum El Dios que adoramos. Tono grabado: Si♭. Compás 6/8; el tempo de 63 cuenta la negra con puntillo (se siente más ágil). Buena para abrir el servicio.",
+      "themes": [
+        "alabanza",
+        "llamado a adorar",
+        "gloria de Dios",
+        "salvación"
+      ],
+      "timeSig": "6/8",
+      "title": "Venid, glorificad a Dios"
+    }
+  },
+  "services": {
+    "v_2026-11-01-domingo": {
+      "date": "2026-11-01",
+      "name": "",
+      "notes": "",
+      "songIds": [
+        "s_nada-en-la-tierra",
+        "s_cristo-nuestra-gloria",
+        "s_la-salvacion-es-del-senor",
+        "s_el-digno-dios"
+      ],
+      "type": "domingo",
+      "updatedAt": "2026-11-18T12:00:00.000Z"
+    },
+    "v_2026-11-08-domingo": {
+      "date": "2026-11-08",
+      "name": "",
+      "notes": "",
+      "songIds": [
+        "s_mi-esperanza-esta-en-jesus",
+        "s_todo-lo-que-creo-el-rey",
+        "s_mi-alma-esperara",
+        "s_nombre-sobre-todo"
+      ],
+      "type": "domingo",
+      "updatedAt": "2026-11-18T12:00:00.000Z"
+    },
+    "v_2026-11-15-domingo": {
+      "date": "2026-11-15",
+      "name": "",
+      "notes": "",
+      "songIds": [
+        "s_gloria-al-senor-poderoso",
+        "s_cuan-firme-cimiento",
+        "s_mi-alma-esperara",
+        "s_jesucristo-basta"
+      ],
+      "type": "domingo",
+      "updatedAt": "2026-11-18T12:00:00.000Z"
+    },
+    "v_2026-11-22-domingo": {
+      "date": "2026-11-22",
+      "name": "",
+      "notes": "",
+      "songIds": [
+        "s_venid-glorificad-a-dios",
+        "s_por-todo-el-mundo",
+        "s_empieza-en-mi",
+        "s_gracia-mas-grande"
+      ],
+      "type": "domingo",
+      "updatedAt": "2026-11-18T12:00:00.000Z"
+    }
+  }
+}
